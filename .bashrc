@@ -127,3 +127,6 @@ fi
 
 eval $(ssh-agent)
 
+# create alias for .dotfiles.git bare repository
+alias dotfiles='/usr/bin/git --git-dir="$HOME/.dotfiles.git/" --work-tree="$HOME"'
+
