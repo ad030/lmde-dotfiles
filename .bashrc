@@ -131,5 +131,5 @@ eval $(ssh-agent)
 alias dotfiles='/usr/bin/git --git-dir="$HOME/.dotfiles.git/" --work-tree="$HOME"'
 
 # alias for obsidian on desktop
-alias obb='./~/Desktop/Obsidian'
+alias obb='(cd ~/Desktop/ && ./Obsidian)'
 
