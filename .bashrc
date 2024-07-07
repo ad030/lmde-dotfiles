@@ -130,3 +130,6 @@ eval $(ssh-agent)
 # create alias for .dotfiles.git bare repository
 alias dotfiles='/usr/bin/git --git-dir="$HOME/.dotfiles.git/" --work-tree="$HOME"'
 
+# alias for obsidian on desktop
+alias obb='./~/Desktop/Obsidian'
+
