@@ -216,7 +216,7 @@ bar {
 }
 
 # set wallpaper
-exec_always feh --bg-fill ~/Pictures/outer-wilds/outer-wilds.png
+exec_always feh --bg-fill ~/Pictures/Wallpapers/outer-wilds/solar_system1.png
 
 # enable transparency with picom compositor
 exec_always picom -f
