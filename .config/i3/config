@@ -222,8 +222,9 @@ exec_always feh --bg-fill ~/Pictures/Wallpapers/outer-wilds/solar_system1.png
 exec_always picom -f
 
 # Allocate applications to workspaces
-for_window [class="vlc"] move to workspace $ws10
 for_window [class="steam"] move to workspace $ws8
+for_window [class="mpv"] move to workspace $ws9
+for_window [class="vlc"] move to workspace $ws10
 
 #                       border          background      text            indicator
 client.focused          $bgcolour        $bgcolour        $text           $indicator
