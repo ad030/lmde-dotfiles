@@ -127,4 +127,5 @@ fi
 
 eval $(ssh-agent)
 
-
+# add local binaries to path
+export PATH="$PATH:$HOME/.local/bin/"
