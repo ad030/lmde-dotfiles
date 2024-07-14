@@ -16,16 +16,43 @@ set $mod Mod1
 
 font pango:JetBrains Mono NL Medium 16
 
+# set wallpaper
+exec_always feh --no-fehbg --bg-fill ~/Pictures/wallpapers/outer-wilds/solar_system2.png
+# exec_always feh --no-fehbg --bg-tile ~/Pictures/wallpapers/nso/nso_bg_tile.png
 
-# colour themes for windows
-set $bgcolour           #25749e99
-set $in-bgcolour        #3636364D
-set $text               #ffffff
-set $u-bgcolour         #ff0000
-set $indicator          #f08080
-set $in-text            #969696
-set $focused-ws         #523d6480
-set $bar-colour         #523d642E
+exec_always --no-startup-id ~/.fehbg
+
+# enable transparency with picom compositor
+exec_always picom -f
+
+
+# catppuccin theme
+set $rosewater #f5e0dc
+set $flamingo #f2cdcd
+set $pink #f5c2e7
+set $mauve #cba6f7
+set $red #f38ba8
+set $maroon #eba0ac
+set $peach #fab387
+set $yellow #f9e2af
+set $green #a6e3a1
+set $teal #94e2d5
+set $sky #89dceb
+set $sapphire #74c7ec
+set $blue #89b4fa
+set $lavender #b4befe
+set $text #cdd6f4
+set $subtext1 #bac2de
+set $subtext0 #a6adc8
+set $overlay2 #9399b2
+set $overlay1 #7f849c
+set $overlay0 #6c7086
+set $surface2 #585b70
+set $surface1 #45475a
+set $surface0 #313244
+set $base #1e1e2e
+set $mantle #181825
+set $crust #11111b
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
@@ -61,7 +88,7 @@ floating_modifier $mod
 tiling_drag modifier titlebar
 
 # start a terminal
-bindsym $mod+Return exec kitty || i3-sensible-terminal
+bindsym $mod+Return exec --no-startup-id kitty || i3-sensible-terminal
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -166,7 +193,7 @@ bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+bindsym $mod+Shift+e exec --no-startup-id "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -205,30 +232,37 @@ bar {
         font pango: Jetbrains Mono NL Medium 12
 
         colors {
-                        background $bar-colour
-
-                        separator #191919
-                        #                       border          background      text    
-                        focused_workspace       $focused-ws     $focused-ws     $text
-                        inactive_workspace      $in-bgcolour    $in-bgcolour    $text
-                        urgent_workspace        $u-bgcolour     $u-bgcolour     $text
-                }
+            # background         $base
+            statusline         $text
+            focused_statusline $text
+            focused_separator  $base
+            focused_workspace  $base $base $green
+            active_workspace   $base $base $blue
+            inactive_workspace $base $base $surface1
+            urgent_workspace   $base $base $surface1
+            binding_mode       $base $base $surface1
+         }
 }
 
-# set wallpaper
-exec_always feh --bg-fill ~/Pictures/Wallpapers/outer-wilds/solar_system1.png
 
-# enable transparency with picom compositor
-exec_always picom -f
 
-# Allocate applications to workspaces
+# allocate applications to workspaces
 for_window [class="steam"] move to workspace $ws8
 for_window [class="mpv"] move to workspace $ws9
+for_window [class="sayonara"] move to workspace $ws10
+for_window [class="spotify"] move to workspace $ws10
 for_window [class="vlc"] move to workspace $ws10
 
-#                       border          background      text            indicator
-client.focused          $bgcolour        $bgcolour        $text           $indicator
-client.unfocused        $in-bgcolour     $in-bgcolour     $in-text        $in-bgcolour
-client.focused_inactive $in-bgcolour     $in-bgcolour     $in-text        $in-bgcolour
-client.urgent           $u-bgcolour      $u-bgcolour      $text           $u-bgcolour
+# target                 title     bg    text   indicator  border
+client.focused           $lavender $base $text  $rosewater $lavender
+client.focused_inactive  $overlay0 $base $text  $rosewater $overlay0
+client.unfocused         $overlay0 $base $text  $rosewater $overlay0
+client.urgent            $peach    $base $peach $overlay0  $peach
+client.placeholder       $overlay0 $base $text  $overlay0  $overlay0
 
+# gaps between windows
+gaps inner 8px
+gaps outer 5px
+
+# borders
+default_border normal 2
