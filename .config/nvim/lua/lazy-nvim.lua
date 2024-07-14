@@ -1,10 +1,10 @@
 -- NOTE: Here is where you install your plugins.
 local plugins = {
 	-- colorscheme
-	require("colors.kanagawa"),
+	require("themes.catppuccin"),
 
 	-- adjusts shift and tab length based on file
-	require("plugins/vim-sleuth"),
+	require("plugins.vim-sleuth"),
 
 	-- toggle commenting a line
 	require("plugins.comment"),
