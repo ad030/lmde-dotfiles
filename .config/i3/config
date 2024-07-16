@@ -17,10 +17,8 @@ set $mod Mod1
 font pango:JetBrains Mono NL Medium 16
 
 # set wallpaper
-exec_always feh --no-fehbg --bg-fill ~/Pictures/wallpapers/outer-wilds/solar_system2.png
-# exec_always feh --no-fehbg --bg-tile ~/Pictures/wallpapers/nso/nso_bg_tile.png
-
-exec_always --no-startup-id ~/.fehbg
+# exec_always feh --bg-fill ~/Pictures/wallpapers/outer-wilds/solar_system2.png
+exec_always feh --bg-tile ~/Pictures/wallpapers/nso/nso_bg_tile_96x96.png
 
 # enable transparency with picom compositor
 exec_always picom -f
@@ -265,4 +263,4 @@ gaps inner 8px
 gaps outer 5px
 
 # borders
-default_border normal 2
+default_border pixel 3
