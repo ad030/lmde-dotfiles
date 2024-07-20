@@ -15,10 +15,12 @@ set $mod Mod1
 # is used in the bar {} block below.
 
 font pango:JetBrains Mono NL Medium 16
+# font pango:zpix 16
 
 # set wallpaper
 # exec_always feh --bg-fill ~/Pictures/wallpapers/outer-wilds/solar_system2.png
-exec_always feh --bg-tile ~/Pictures/wallpapers/nso/nso_bg_tile_96x96.png
+# exec_always feh --bg-tile ~/Pictures/wallpapers/nso/bg-tile-96x96/nso_bg_tile_pink_96x96.png
+exec_always feh --bg-tile ~/Pictures/wallpapers/nso/bg-tile-96x96/nso_bg_tile_96x96.png
 
 # enable transparency with picom compositor
 exec_always picom -f
@@ -228,6 +230,7 @@ bar {
         i3bar_command i3bar --transparency
 
         font pango: Jetbrains Mono NL Medium 12
+        # font pango: zpix 12
 
         colors {
             # background         $base
