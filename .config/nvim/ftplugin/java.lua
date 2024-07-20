@@ -6,6 +6,7 @@ local project_name = vim.fn.fnamemodify(vim.fn.getcwd(), ":p:h:t")
 
 -- jdtls workspace directory
 local workspace_path = vim.fn.stdpath("data") .. "/jdtls-workspace"
+
 local workspace_dir = workspace_path .. "-" .. project_name
 
 -- mason path
@@ -57,7 +58,7 @@ local config = {
 		"-Declipse.product=org.eclipse.jdt.ls.core.product",
 		"-Dlog.protocol=true",
 		"-Dlog.level=ALL",
-		"-javaagent:" .. lombok_path,
+		-- "-javaagent:" .. lombok_path,
 		"-Xmx1g",
 		"--add-modules=ALL-SYSTEM",
 		"--add-opens",
