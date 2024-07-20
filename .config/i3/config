@@ -229,8 +229,8 @@ bar {
 
         i3bar_command i3bar --transparency
 
-        font pango: Jetbrains Mono NL Medium 12
-        # font pango: zpix 12
+        # font pango: Jetbrains Mono NL Medium 12
+        font pango: zpix 12
 
         colors {
             # background         $base
