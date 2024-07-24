@@ -18,13 +18,15 @@ font pango:JetBrains Mono NL Medium 16
 # font pango:zpix 16
 
 # set wallpaper
-# exec_always feh --bg-fill ~/Pictures/wallpapers/outer-wilds/solar_system2.png
-# exec_always feh --bg-tile ~/Pictures/wallpapers/nso/bg-tile-96x96/nso_bg_tile_pink_96x96.png
-exec_always feh --bg-tile ~/Pictures/wallpapers/nso/bg-tile-96x96/nso_bg_tile_96x96.png
+exec_always feh --bg-fill ~/Pictures/wallpapers/outer-wilds/solar_system2.png
+# exec_always feh --bg-tile ~/Pictures/wallpapers/nso/bg-tile-96x96/nso_bg_tile_pink_inv_96x96.png
+# exec_always feh --bg-tile ~/Pictures/wallpapers/nso/bg-tile-96x96/nso_bg_tile_96x96.png
 
 # enable transparency with picom compositor
 exec_always picom -f
 
+# lock screen after 3 minutes
+exec "xautolock -detectsleep -time 3 -locker \"i3lock-fancy\""
 
 # catppuccin theme
 set $rosewater #f5e0dc
@@ -249,10 +251,8 @@ bar {
 
 # allocate applications to workspaces
 for_window [class="steam"] move to workspace $ws8
-for_window [class="mpv"] move to workspace $ws9
 for_window [class="sayonara"] move to workspace $ws10
 for_window [class="spotify"] move to workspace $ws10
-for_window [class="vlc"] move to workspace $ws10
 
 # target                 title     bg    text   indicator  border
 client.focused           $lavender $base $text  $rosewater $lavender
