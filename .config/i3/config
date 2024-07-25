@@ -28,7 +28,7 @@ exec_always picom -f
 # lock screen after 3 minutes
 exec "xautolock -detectsleep -time 3 -locker \"i3lock-fancy\""
 
-# catppuccin theme
+# catppuccin mocha theme
 set $rosewater #f5e0dc
 set $flamingo #f2cdcd
 set $pink #f5c2e7
@@ -90,7 +90,7 @@ floating_modifier $mod
 tiling_drag modifier titlebar
 
 # start a terminal
-bindsym $mod+Return exec --no-startup-id kitty || i3-sensible-terminal
+bindsym $mod+Return exec --no-startup-id wezterm || i3-sensible-terminal
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -161,7 +161,7 @@ set $ws3 "3"
 set $ws4 "4"
 set $ws5 "5"
 set $ws6 "6"
-set $ws7 "7"
+set $ws7 "7: Launchers"
 set $ws8 "8: Games"
 set $ws9 "9: Watch"
 set $ws10 "10: Music"
@@ -250,9 +250,11 @@ bar {
 
 
 # allocate applications to workspaces
-for_window [class="steam"] move to workspace $ws8
+for_window [class="steam"] move to workspace $ws7
+for_window [class="PrismLauncher"] move to workspace $ws7
 for_window [class="sayonara"] move to workspace $ws10
 for_window [class="spotify"] move to workspace $ws10
+for_window [class="Minecraft.*"] move to workspace $ws8
 
 # target                 title     bg    text   indicator  border
 client.focused           $lavender $base $text  $rosewater $lavender
