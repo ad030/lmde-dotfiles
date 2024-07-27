@@ -10,9 +10,10 @@ return {
 			},
 
 			formatters = {
-				clang_format = {
-					args = {
-						"--style=llvm",
+				["clang-format"] = {
+					prepend_args = {
+						"--style",
+						"{ BasedOnStyle: LLVM, IndentWidth: 4, BreakBeforeBraces: Allman }",
 					},
 				},
 			},
