@@ -13,7 +13,23 @@ return {
 				["clang-format"] = {
 					prepend_args = {
 						"--style",
-						"{ BasedOnStyle: LLVM, IndentWidth: 4, BreakBeforeBraces: Allman }",
+						[[{ 
+							BasedOnStyle: LLVM, 
+							IndentWidth: 4, 
+							BreakBeforeBraces: Allman 
+						}]],
+					},
+				},
+				["sql_formatter"] = {
+					prepend_args = {
+						"--config",
+						[[{
+							"language": "sqlite",
+							"tabWidth": 4,
+							"keywordCase": "upper",
+							"linesBetweenQueries": 2,
+							"newlineBeforeSemicolon": true
+						}]],
 					},
 				},
 			},
@@ -53,6 +69,8 @@ return {
 				csharp = { "astyle" },
 
 				c = { "clang-format" },
+
+				sql = { "sql_formatter" },
 			},
 		},
 	},

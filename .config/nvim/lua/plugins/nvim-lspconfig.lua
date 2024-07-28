@@ -202,6 +202,7 @@ return {
 				"java-debug-adapter",
 				"java-test",
 				"google-java-format",
+				"sql-formatter",
 			})
 			require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
 
