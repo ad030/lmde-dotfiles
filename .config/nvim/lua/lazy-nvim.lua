@@ -31,7 +31,7 @@ local plugins = {
 	require("plugins.obsidian-nvim"),
 
 	-- code debugger protocol
-	require("plugins.dap"),
+	require("plugins.nvim-dap"),
 
 	-- code formatter
 	require("plugins.conform"),

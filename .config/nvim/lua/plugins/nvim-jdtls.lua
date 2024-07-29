@@ -4,7 +4,7 @@ return {
 	dependencies = {
 		"mfussenegger/nvim-dap",
 	},
-	config = function()
+	opts = function()
 		vim.keymap.set("n", "<leader>jdf", "<CMD>lua require('jdtls').test_class()<CR>", { desc = "Java Test Class" })
 		vim.keymap.set(
 			"n",
