@@ -7,4 +7,5 @@ alias dotfiles='/usr/bin/git --git-dir="$HOME/.dotfiles/" --work-tree="$HOME"'
 # alias for obsidian in desktop
 alias obb='(cd /usr/bin/ && obsidian)'
 
-
+# alias for JetBrains IntelliJ IDEA
+alias idea='idea.sh'
