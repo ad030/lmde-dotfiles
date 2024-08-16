@@ -1,3 +1,40 @@
+local function get_tools()
+	local tools = require("../tools")
+
+	local tools_set = {}
+	-- go through all filetypes in tools.lua
+	for _, ft in ipairs(tools) do
+		-- get formatters
+		for _, formatter in ipairs(ft.formatters) do
+			if ft.formatters ~= nil then
+				tools_set[formatter] = true
+			end
+		end
+
+		-- get lsps
+		for _, lsp in ipairs(ft.lsp) do
+			if ft.lsp ~= nil then
+				tools_set[lsp] = true
+			end
+		end
+
+		-- get linters
+		for _, linter in ipairs(ft.linters) do
+			if ft.linters ~= nil then
+				tools_set[linter] = true
+			end
+		end
+	end
+
+	local to_install = {}
+	-- get keys from tools_set
+	for key, _ in pairs(tools_set) do
+		table.insert(to_install, key)
+	end
+
+	return to_install
+end
+
 return {
 
 	{ -- LSP Configuration & Plugins
@@ -192,18 +229,21 @@ return {
 			-- You can add other tools here that you want Mason to install
 			-- for you, so that they are available from within Neovim.
 			local ensure_installed = vim.tbl_keys(servers or {})
-			vim.list_extend(ensure_installed, {
-				"stylua", -- Used to format lua code
-				"pyright",
-				"prettier",
-				"prettierd",
-				"clangd",
-				"clang-format",
-				"java-debug-adapter",
-				"java-test",
-				"google-java-format",
-				"sql-formatter",
-			})
+			vim.list_extend(
+				ensure_installed,
+				-- {
+				-- 	"stylua", -- Used to format lua code
+				-- 	"pyright",
+				-- 	"prettier",
+				-- 	"prettierd",
+				-- 	"clang-format",
+				-- 	"clangd",
+				-- 	"java-debug-adapter",
+				-- 	"java-test",
+				-- 	"sql-formatter",
+				-- }
+				get_tools()
+			)
 			require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
 
 			require("mason-lspconfig").setup({
@@ -215,12 +255,14 @@ return {
 						-- certain features of an LSP (for example, turning off formatting for tsserver)
 
 						-- do not call setup for jdtls
-
-						if server_name ~= "jdtls" then
-							server.capabilities =
-								vim.tbl_deep_extend("force", {}, capabilities, server.capabilities or {})
-							require("lspconfig")[server_name].setup(server)
+						if server_name == "jdtls" then
+							goto continue
 						end
+
+						server.capabilities = vim.tbl_deep_extend("force", {}, capabilities, server.capabilities or {})
+						require("lspconfig")[server_name].setup(server)
+
+						::continue::
 					end,
 				},
 			})

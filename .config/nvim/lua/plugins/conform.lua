@@ -1,3 +1,5 @@
+local tools = require("../tools")
+
 return {
 	{
 		-- Autoformat
@@ -35,42 +37,38 @@ return {
 			},
 
 			formatters_by_ft = {
-				lua = { "stylua" },
+				lua = tools.lua.formatters,
 
-				java = { "google-java-format" },
+				java = tools.java.formatters,
 
 				-- Conform can also run multiple formatters sequentially
-				python = {},
+				python = tools.python.formatters,
 				--
 				-- You can use a sub-list to tell conform to run *until* a formatter
 				-- is found.
-				javascript = { "eslint_d", { "prettierd", "prettier" } },
+				javascript = tools.javascript.formatters,
 
-				typescript = { { "prettierd", "prettier" } },
+				typescript = tools.typescript.formatters,
 
-				javascriptreact = { { "prettierd", "prettier" } },
+				css = tools.css.formatters,
 
-				typescriptreact = { { "prettierd", "prettier" } },
+				html = tools.html.formatters,
 
-				css = { { "prettierd", "prettier" } },
+				json = tools.html.formatters,
 
-				html = { { "prettierd", "prettier" } },
+				yaml = tools.html.formatters,
 
-				json = { { "prettierd", "prettier" } },
+				markdown = tools.markdown.formatters,
 
-				yaml = { { "prettierd", "prettier" } },
+				graphql = tools.graphql.formatters,
 
-				markdown = { { "prettierd", "prettier" } },
+				xml = tools.xml.formatters,
 
-				graphql = { { "prettierd", "prettier" } },
+				csharp = tools.csharp.formatters,
 
-				xml = { "xmllint" },
+				c = tools.c.formatters,
 
-				csharp = { "astyle" },
-
-				c = { "clang-format" },
-
-				sql = { "sql_formatter" },
+				sql = tools.sql.formatters,
 			},
 		},
 	},

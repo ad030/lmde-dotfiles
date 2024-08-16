@@ -1,5 +1,7 @@
+require("global")
+
 require("options")
 
 require("keymaps")
 
-require("lazy-nvim")
+require("lazy-setup")
