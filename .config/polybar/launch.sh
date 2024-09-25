@@ -2,6 +2,8 @@
 
 # terminate already running bar instances
 
-polybar-msg cmd quit
+polybar-msg cmd quit;
 
-polybar
+polybar workspaces &
+polybar specs &
+polybar info;
