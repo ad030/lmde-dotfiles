@@ -15,6 +15,8 @@ return {
 				"python",
 				"c_sharp",
 				"xml",
+				"css",
+				"javascript",
 			},
 			-- Autoinstall languages that are not installed
 			auto_install = true,
