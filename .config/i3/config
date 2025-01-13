@@ -25,7 +25,7 @@ font pango:JetBrains Mono NL Medium 16
 
 # set wallpaper
 
-set $wallpaper ~/Pictures/wallpapers/outer-wilds/wallpaper1.png
+set $wallpaper ~/Pictures/wallpapers/outer-wilds/archaeologist_edition.avif
 exec_always feh --bg-fill $wallpaper
 
 # enable transparency with picom compositor
