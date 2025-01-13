@@ -34,6 +34,11 @@ return {
 						}]],
 					},
 				},
+				["latexindent"] = {
+					prepend_args = {
+						"-m",
+					},
+				},
 			},
 
 			formatters_by_ft = {
@@ -69,6 +74,8 @@ return {
 				c = tools.c.formatters,
 
 				sql = tools.sql.formatters,
+
+				tex = tools.latex.formatters,
 			},
 		},
 	},

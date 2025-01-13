@@ -117,6 +117,12 @@ local tools_by_filetype = {
 			"clang-format",
 		},
 	},
+
+	latex = {
+		formatters = {
+			"latexindent",
+		},
+	},
 }
 
 return tools_by_filetype
