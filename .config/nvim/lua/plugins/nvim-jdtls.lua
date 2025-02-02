@@ -5,12 +5,12 @@ return {
 		"mfussenegger/nvim-dap",
 	},
 	config = function()
-		vim.keymap.set("n", "<leader>jdf", "<CMD>lua require('jdtls').test_class()<CR>", { desc = "Java Test Class" })
-		vim.keymap.set(
-			"n",
-			"<leader>jdn",
-			"<CMD>lua require('jdtls').test_nearest_method()<CR>",
-			{ desc = "Java Test Nearest Method" }
-		)
+		vim.keymap.set("n", "<leader>juc", function()
+			require("jdtls").test_class()
+		end, { desc = "[JU]nit Test [C]lass" })
+
+		vim.keymap.set("n", "<leader>jum", function()
+			require("jdtls").test_nearest_method()
+		end, { desc = "[JU]nit Test Nearest [M]ethod" })
 	end,
 }

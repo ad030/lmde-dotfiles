@@ -25,7 +25,6 @@ local tools_by_filetype = {
 
 	java = {
 		formatters = {
-			"clang-format",
 			"google-java-format",
 		},
 		dap = {

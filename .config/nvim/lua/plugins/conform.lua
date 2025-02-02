@@ -17,7 +17,7 @@ return {
 						"--style",
 						[[{ 
 							BasedOnStyle: LLVM, 
-							IndentWidth: 4, 
+							IndentWidth: 8, 
 							BreakBeforeBraces: Allman 
 						}]],
 					},
@@ -27,7 +27,7 @@ return {
 						"--config",
 						[[{
 							"language": "sqlite",
-							"tabWidth": 4,
+							"tabWidth": 8,
 							"keywordCase": "upper",
 							"linesBetweenQueries": 2,
 							"newlineBeforeSemicolon": true

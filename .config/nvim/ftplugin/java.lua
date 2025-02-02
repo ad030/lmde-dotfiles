@@ -19,12 +19,13 @@ local jdtls_path = require("mason-registry").get_package("jdtls"):get_install_pa
 local lombok_path = mason_path .. "/packages/lombok-nightly/lombok.jar"
 
 -- necessary for debugging
+-- installed in home directory (probably should install elsewhere in the future)
 local bundles = {
-	vim.fn.glob(mason_path .. "/share/java-debug-adapter/com.microsoft.java.debug.plugin.jar"),
+	vim.fn.glob("~/java-debug/share/java-debug-adapter/com.microsoft.java.debug.plugin.jar"),
 }
 
 -- necessary for debugging unit tests
-vim.list_extend(bundles, vim.split(vim.fn.glob(mason_path .. "/share/java-test/*.jar", true), "\n"))
+vim.list_extend(bundles, vim.split(vim.fn.glob("~/vscode-java-test/server/*.jar", true), "\n"))
 
 -- jdtls launcher jar
 local launcher_jar = vim.fn.glob(jdtls_path .. "/plugins/org.eclipse.equinox.launcher_*.jar")

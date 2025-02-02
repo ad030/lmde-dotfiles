@@ -52,7 +52,11 @@ opt.splitbelow = true
 --  See `:help 'list'`
 --  and `:help 'listchars'`
 opt.list = true
-opt.listchars = { tab = "» ", trail = "·", nbsp = "␣" }
+opt.listchars = {
+	tab = "» ",
+	trail = "·",
+	nbsp = "␣",
+}
 
 -- Preview substitutions live, as you type!
 opt.inccommand = "split"
@@ -72,12 +76,17 @@ opt.ttyfast = true
 -- bash-like tab completion
 opt.wildmode = "longest:list"
 
--- smart indent
-opt.smartindent = true
+-- autoindent in c style
+opt.cindent = true
 
--- tabs are 4 spaces long
-opt.tabstop = 4
-opt.shiftwidth = 4
+-- tabs are 8 spaces long
+opt.tabstop = 8
+opt.softtabstop = 8
+-- indents are 8 spaces long
+opt.shiftwidth = 8
+
+-- replace tabs with equivalent amount of spaces
+opt.expandtab = true
 
 -- use terminal colors
 opt.termguicolors = true

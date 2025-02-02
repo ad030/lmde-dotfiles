@@ -56,7 +56,7 @@ return {
 	require("plugins.markdown-preview"),
 
 	-- automatically close brackets
-	require("plugins.autoclose"),
+	-- require("plugins.autoclose"),
 
 	-- terminal in neovim plugin
 	require("plugins.toggleterm"),
