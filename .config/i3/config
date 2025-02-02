@@ -20,6 +20,10 @@ set $scripts ~/.config/i3/scripts/
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
 
+# mute on startup
+exec_always --no-startup-id "$scripts/volume.sh mute"
+
+
 font pango:JetBrains Mono NL Medium 16
 # font pango:zpix 16
 
@@ -86,14 +90,14 @@ exec --no-startup-id nm-applet
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
-bindsym XF86AudioRaiseVolume exec --no-startup-id "$scripts/volume.sh inc"
-bindsym XF86AudioLowerVolume exec --no-startup-id "$scripts/volume.sh dec"
-bindsym XF86AudioMute exec --no-startup-id "$scripts/volume.sh toggle"
-bindsym XF86AudioMicMute exec --no-startup-id "$scripts/mic_mute.sh"
+bindsym $sup+XF86AudioRaiseVolume exec --no-startup-id "$scripts/volume.sh inc"
+bindsym $sup+XF86AudioLowerVolume exec --no-startup-id "$scripts/volume.sh dec"
+bindsym $sup+XF86AudioMute exec --no-startup-id "$scripts/volume.sh toggle"
+bindsym $sup+XF86AudioMicMute exec --no-startup-id "$scripts/mic_mute.sh"
 
 # use brightnessctl to adjust screen brightness
-bindsym XF86MonBrightnessUp exec --no-startup-id "$scripts/brightness.sh inc"
-bindsym XF86MonBrightnessDown exec --no-startup-id "$scripts/brightness.sh dec"
+bindsym $sup+XF86MonBrightnessUp exec --no-startup-id "$scripts/brightness.sh inc"
+bindsym $sup+XF86MonBrightnessDown exec --no-startup-id "$scripts/brightness.sh dec"
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $sup
