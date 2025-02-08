@@ -17,7 +17,7 @@ config.color_scheme = color_schemes[1]
 config.enable_tab_bar = false
 
 -- set terminal background opacity
-config.window_background_opacity = 0.60
+config.window_background_opacity = 0.50
 
 -- configure font
 config.font = wezterm.font("JetBrains Mono")
