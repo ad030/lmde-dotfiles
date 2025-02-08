@@ -11,7 +11,7 @@ local color_schemes =
 	{ "Catppuccin Mocha", "Catppuccin Macchiato", "Catppuccin Frappe", "Catppuccin Latte", "GruvboxDark" }
 
 -- set the color scheme
-config.color_scheme = color_schemes[2]
+config.color_scheme = color_schemes[1]
 
 -- disable tab bar
 config.enable_tab_bar = false
