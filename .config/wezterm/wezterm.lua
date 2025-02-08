@@ -10,7 +10,7 @@ local config = wezterm.config_builder()
 config.enable_tab_bar = false
 
 -- set terminal background opacity
-config.window_background_opacity = 0.75
+config.window_background_opacity = 0.60
 
 -- configure font
 config.font = wezterm.font("JetBrains Mono")
