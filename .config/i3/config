@@ -35,11 +35,14 @@ exec_always feh --bg-fill $wallpaper
 # enable transparency with picom compositor
 exec_always picom 
 
+# lock with i3lock-fancy
+set $locker i3lock-fancy -p 
+
 # lock screen after 5 minutes
-exec "xautolock -detectsleep -time 8 -locker \"i3lock-fancy\" -notify 30"
+exec "xautolock -detectsleep -time 8 -locker \"$locker\" -notify 30"
 
 # lock screen keybind
-bindsym $sup+Shift+p exec i3lock-fancy
+bindsym $sup+Shift+p exec $locker
 
 # catppuccin mocha theme
 set $rosewater #f5e0dc
