@@ -4,6 +4,8 @@
 
 polybar-msg cmd quit;
 
-polybar workspaces &
-polybar specs &
-polybar info;
+polybar all
+
+# polybar workspaces &
+# polybar specs &
+# polybar info;
