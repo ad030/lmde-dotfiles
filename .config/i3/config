@@ -29,14 +29,14 @@ font pango:JetBrains Mono NL Medium 16
 
 # set wallpaper
 
-set $wallpaper ~/Pictures/wallpapers/outer-wilds/archaeologist_edition.avif
+set $wallpaper ~/wallpapers/archaeologist_edition.png
 exec_always feh --bg-fill $wallpaper
 
 # enable transparency with picom compositor
-exec_always picom -f
+# exec_always picom 
 
 # lock screen after 5 minutes
-exec "xautolock -detectsleep -time 5 -locker \"i3lock-fancy\""
+exec "xautolock -detectsleep -time 8 -locker \"i3lock-fancy\" -notify 30"
 
 # lock screen keybind
 bindsym $sup+Shift+p exec i3lock-fancy
@@ -279,22 +279,19 @@ for_window [class="sayonara"] move to workspace $ws10
 for_window [class="spotify"] move to workspace $ws10
 for_window [class="Minecraft.*"] move to workspace $ws8
 
-# target                 title     bg    text   indicator  border
-client.focused           $sapphire $base $text  $rosewater $sapphire
-client.focused_inactive  $overlay0 $base $text  $rosewater $overlay0
-client.unfocused         $overlay0 $base $text  $rosewater $overlay0
-client.urgent            $peach    $base $peach $overlay0  $peach
-client.placeholder       $overlay0 $base $text  $overlay0  $overlay0
+# target                        title           bg      text    indicator       border
+client.focused                  $sapphire       $base   $text   $rosewater      $sapphire
+client.focused_inactive         $overlay0       $base   $text   $rosewater      $overlay0
+client.unfocused                $overlay0       $base   $text   $rosewater      $overlay0
+client.urgent                   $peach          $base   $peach  $overlay0       $peach
+client.placeholder              $overlay0       $base   $text   $overlay0       $overlay0
 
 # gaps between windows
-gaps inner 6px
-gaps outer 6px
-
-# gap for polybar
-gaps top 48px
+gaps inner 8px
+gaps outer 8px
 
 # borders
-default_border pixel 1
+default_border pixel 0
 
 # disable mouse focus
 focus_follows_mouse no
