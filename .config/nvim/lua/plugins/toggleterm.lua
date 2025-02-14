@@ -8,7 +8,7 @@ return {
 
 		opts = {
 			size = 10,
-			open_mapping = "<c-s>",
+			open_mapping = "<Leader>tt",
 		},
 	},
 }
