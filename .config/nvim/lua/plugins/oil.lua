@@ -1,10 +1,18 @@
 return {
 	"stevearc/oil.nvim",
 
-	lazy = false,
+	dependencies = {
+		{ "echasnovski/mini.icons", opts = {} },
+	},
 
-	---@module "oil"
-	---@type oil.SetupOpts
+	--@module "oil"
+	--@type oil.SetupOpts
+
+	init = function()
+		vim.keymap.set("n", "<leader>o", function()
+			require("oil").open()
+		end, { desc = "Open oil browser in parent directory" })
+	end,
 
 	opts = {
 		default_file_explorer = true,
@@ -28,8 +36,5 @@ return {
 			["g\\"] = { "actions.toggle_trash", mode = "n" },
 		},
 	},
-
-	dependencies = {
-		{ "echasnovski/mini.icons", opts = {} },
-	},
+	lazy = false,
 }
