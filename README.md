@@ -6,16 +6,16 @@ Me like linux me like config.
 ## What I Use
 
 - i3
-- polybar
-- picom
-- wezterm
-- rofi
+- Polybar
+- Picom
+- Wezterm
+- Rofi
 - Neovim
 
 ## Dependencies
 
-- `JetBrains Mono` font
-- `Meslo LGMDZ Nerd Font Mono` font
+- `Meslo LGM Nerd Font Mono` font
+- `Jetbrains Mono` font
 - `font-awesome` font
 - Neovim 0.10.0+
 
