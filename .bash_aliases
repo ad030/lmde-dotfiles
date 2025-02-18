@@ -12,7 +12,7 @@ alias :wq='exit'
 alias ls='ls -shN --color=auto --group-directories-first'
 
 # always show gcc warnings
-alias gcc='gcc -Wall'
+alias gcc='gcc -Wall -Wextra -pedantic'
 
 # list process cpu and ram info
 alias ram='ps axch -o cmd:15,%mem --sort=-%mem | head'
@@ -30,8 +30,4 @@ alias ......="cd ../../../../.."
 
 # alias for .dotfiles bare repository
 alias dotfiles='/usr/bin/git --git-dir="$HOME/.dotfiles/" --work-tree="$HOME"'
-
-
-
-
 
