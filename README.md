@@ -10,12 +10,13 @@ Me like linux me like config.
 - picom
 - wezterm
 - rofi
-- neovim
+- Neovim
 
 ## Dependencies
 
-- JetBrains Mono font
-- font-awesome font
+- `JetBrains Mono` font
+- `Meslo LGMDZ Nerd Font Mono` font
+- `font-awesome` font
 - Neovim 0.10.0+
 
 ### Neovim
