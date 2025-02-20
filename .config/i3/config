@@ -293,6 +293,9 @@ client.placeholder              $overlay0       $base   $text   $overlay0       
 gaps inner 8px
 gaps outer 8px
 
+# room for status bar
+gaps top 42px
+
 # borders
 default_border pixel 0
 
