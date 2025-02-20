@@ -7,11 +7,17 @@ local config = wezterm.config_builder()
 -- This is where you actually apply your config choices
 
 -- list of color schemes i like
-local color_schemes =
-	{ "Catppuccin Mocha", "Catppuccin Macchiato", "Catppuccin Frappe", "Catppuccin Latte", "GruvboxDark" }
+local color_schemes = {
+	"Catppuccin Mocha",
+	"Catppuccin Macchiato",
+	"Catppuccin Frappe",
+	"Catppuccin Latte",
+	"Gruvbox Material (Gogh)",
+	"Tokyo Night Storm",
+}
 
 -- set the color scheme
-config.color_scheme = color_schemes[1]
+config.color_scheme = color_schemes[5]
 
 -- disable tab bar
 config.enable_tab_bar = false
