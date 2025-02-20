@@ -4,10 +4,8 @@ return {
 	init = function()
 		vim.cmd.colorscheme("kanagawa")
 	end,
-	opts = function()
-		local opts = {
-			theme = "wave",
-		}
-		return opts
-	end,
+	opts = {
+		theme = "wave",
+		transparent = true,
+	},
 }

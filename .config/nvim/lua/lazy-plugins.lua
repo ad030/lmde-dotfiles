@@ -2,7 +2,10 @@
 
 return {
 	-- colorscheme
-	require("themes.catppuccin"),
+	require("themes.gruvbox-material"),
+	-- require("themes.kanagawa"),
+	-- require("themes.catppuccin"),
+	-- require("themes.tokyonight"),
 
 	-- adjusts shift and tab length based on file
 	require("plugins.vim-sleuth"),
