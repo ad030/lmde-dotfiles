@@ -33,7 +33,7 @@ config.font_dirs = {
 
 -- configure font
 config.font = wezterm.font_with_fallback({
-	"Meslo LGM Nerd Font Mono",
+	-- "Meslo LGM Nerd Font Mono",
 	"Jetbrains Mono",
 })
 config.font_size = 14
