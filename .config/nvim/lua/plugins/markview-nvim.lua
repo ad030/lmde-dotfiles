@@ -15,6 +15,7 @@ return {
 			enable = true,
 
 			modes = { "n", "no", "c" },
+			hybrid_modes = { "n", "no", "c" },
 			ignore_buftypes = { "nofile" },
 
 			filetypes = { "markdown", "latex" },
