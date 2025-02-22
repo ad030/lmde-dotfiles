@@ -190,7 +190,7 @@ return {
 				--
 
 				-- typescript language server
-				tsserver = {},
+				ts_ls = {},
 
 				-- python language server
 				pyright = {},

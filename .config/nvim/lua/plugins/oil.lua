@@ -9,7 +9,7 @@ return {
 	--@type oil.SetupOpts
 
 	init = function()
-		vim.keymap.set("n", "<leader>o", function()
+		vim.keymap.set("n", "<leader>oo", function()
 			require("oil").open()
 		end, { desc = "Open oil browser in parent directory" })
 	end,

@@ -40,6 +40,9 @@ return {
 	-- markdown previewer plugin
 	require("plugins.markview-nvim"),
 
+	-- obsidian note taking
+	require("plugins.obsidian-nvim"),
+
 	-- code debugger protocol
 	require("plugins.nvim-dap"),
 
