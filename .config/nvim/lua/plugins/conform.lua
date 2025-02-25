@@ -7,7 +7,7 @@ return {
 		opts = {
 			notify_on_error = false,
 			format_on_save = {
-				timeout_ms = 500,
+				timeout_ms = 750,
 				lsp_fallback = true,
 			},
 
@@ -37,6 +37,15 @@ return {
 				["latexindent"] = {
 					prepend_args = {
 						"-m",
+					},
+				},
+
+				["prettierd"] = {
+					env = {
+						PRETTIERD_DEFAULT_CONFIG = [[{
+						"indent_style": "space",
+						"indent_size" = 8
+						}]],
 					},
 				},
 			},
