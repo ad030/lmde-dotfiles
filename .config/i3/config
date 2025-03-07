@@ -44,7 +44,6 @@ exec "xautolock -detectsleep -time 8 -locker \"$locker\" -notify 30"
 # lock screen keybind
 bindsym $sup+Shift+p exec $locker
 
-
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
 #font pango:DejaVu Sans Mono 8
