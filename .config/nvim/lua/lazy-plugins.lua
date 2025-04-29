@@ -14,7 +14,7 @@ return {
 	require("plugins.comment"),
 
 	-- highlight syntax
-	require("plugins.treesitter"),
+	require("plugins.nvim-treesitter"),
 
 	-- git decorations within a file
 	require("plugins.gitsigns"),

@@ -33,6 +33,9 @@ return {
 		config = function(_, opts)
 			-- [[ Configure Treesitter ]] See `:help nvim-treesitter`
 
+			-- interpret .v files as verilog files
+			vim.treesitter.language.register("verilog", "v")
+
 			---@diagnostic disable-next-line: missing-fields
 			require("nvim-treesitter.configs").setup(opts)
 

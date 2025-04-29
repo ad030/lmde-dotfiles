@@ -123,6 +123,15 @@ local tools_by_filetype = {
 			"latexindent",
 		},
 	},
+
+	verilog = {
+		formatters = {
+			"clang-format",
+		},
+		lsp = {
+			"hdl-checker",
+		},
+	},
 }
 
 return tools_by_filetype

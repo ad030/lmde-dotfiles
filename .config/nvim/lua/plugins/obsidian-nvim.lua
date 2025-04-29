@@ -8,9 +8,9 @@ return {
 	},
 
 	init = function()
-		vim.keymap.set("n", "<leader>obt", "<cmd>ObsidianTemplate<cr>", { desc = "Obsidian Template" })
-		vim.keymap.set("n", "<leader>obo", "<cmd>ObsidianOpen<cr>", { desc = "Obsidian Open" })
-		vim.keymap.set("n", "<leader>obd", "<cmd>ObsidianToday<cr>", { desc = "Obsidian Daily Note" })
+		vim.keymap.set("n", "<leader>Ot", "<cmd>ObsidianTemplate<cr>", { desc = "Obsidian Template" })
+		vim.keymap.set("n", "<leader>Oo", "<cmd>ObsidianOpen<cr>", { desc = "Obsidian Open" })
+		vim.keymap.set("n", "<leader>Od", "<cmd>ObsidianToday<cr>", { desc = "Obsidian Daily Note" })
 	end,
 
 	opts = {
@@ -41,12 +41,14 @@ return {
 		},
 
 		mappings = {
+			--[[
 			["<cr>"] = {
 				action = function()
 					return require("obsidian").util.smart_action()
 				end,
 				opts = { buffer = true, expr = true },
 			},
+			]]
 
 			["gf"] = {
 				action = function()

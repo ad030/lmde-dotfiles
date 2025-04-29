@@ -36,7 +36,6 @@ local function get_tools()
 end
 
 return {
-
 	{ -- LSP Configuration & Plugins
 		"neovim/nvim-lspconfig",
 		dependencies = {
@@ -200,6 +199,10 @@ return {
 
 				-- java language server
 				jdtls = {},
+
+				hdl_checker = {
+					filetypes = { "v" },
+				},
 
 				-- lua language server
 				lua_ls = {
