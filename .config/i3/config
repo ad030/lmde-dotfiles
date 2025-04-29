@@ -77,6 +77,8 @@ bindsym $sup+XF86MonBrightnessDown exec --no-startup-id "$scripts/brightness.sh 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $sup
 
+bindsym $sup+p exec --no-startup-id "gnome-screenshot"
+
 # move tiling windows via drag & drop by left-clicking into the title bar,
 # or left-clicking anywhere into the window while holding the floating modifier.
 tiling_drag modifier titlebar
@@ -292,11 +294,12 @@ set $purple #b16286
 set $aqua #689d68
 set $gray #a89984
 set $darkgray #1d2021
+set $white #dedede
 
 # target                        title           bg              text            indicator       border
 client.focused                  $green          $bg             $darkgray       $purple         $darkgray
-client.focused_inactive         $darkgray       $darkgray       $yellow         $purple         $darkgray
-client.unfocused                $darkgray       $darkgray       $yellow         $purple         $darkgray
+client.focused_inactive         $green          $darkgray       $yellow         $purple         $darkgray
+client.unfocused                $gray           $darkgray       $yellow         $purple         $darkgray
 client.urgent                   $red            $red            $white          $red            $red
 client.placeholder              $bg             $bg             $darkgray       $darkgray       $darkgray
 

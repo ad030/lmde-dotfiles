@@ -5,7 +5,7 @@ set -o errexit
 LC_ALL=C
 
 default_sink=$(pactl get-default-sink)
-max_volume_percent=100
+max_volume_percent=200
 interval=5
 
 action="$1"
