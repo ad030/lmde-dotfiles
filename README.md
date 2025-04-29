@@ -5,6 +5,7 @@ My personal config on LMDE 6.
 ## What I Use
 
 - i3
+  - i3lock-fancy
 - Polybar
 - Picom
 - Wezterm
