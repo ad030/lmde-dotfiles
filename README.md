@@ -33,4 +33,5 @@ $ mkdir -p .dotfiles-backup && \
 $ dotfiles config --local status.showUntrackedFiles no
 ```
 
-Alternatively, overwrite the existing dotfiles (such as .bashrc and .bash_aliases) with `dotfiles checkout -f`.
+Alternatively, replace the third line with `dotfiles checkout -f`.
+This overwrites existing dotfiles (such as .bashrc and .bash_aliases) without copying them to a separate file.
