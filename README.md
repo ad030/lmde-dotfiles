@@ -14,7 +14,6 @@ My personal config on LMDE 6.
 
 ## Dependencies
 
-- `Meslo LGM Nerd Font Mono` font
 - `Jetbrains Mono` font
 - `font-awesome` font
 - Neovim 0.10.0+
