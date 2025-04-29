@@ -1,7 +1,6 @@
 # My Dotfiles
 
 My personal config on LMDE 6.
-Me like linux me like config.
 
 ## What I Use
 
