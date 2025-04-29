@@ -1,3 +1,4 @@
+--[[
 vim.api.nvim_create_autocmd({ "LspAttach" }, {
 	-- group = "Hierarchy",
 	desc = "Set up the :FunctionReferences user command",
@@ -6,3 +7,4 @@ vim.api.nvim_create_autocmd({ "LspAttach" }, {
 		require("hierarchy").setup(opts)
 	end,
 })
+]]--
