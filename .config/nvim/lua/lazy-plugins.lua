@@ -2,9 +2,9 @@
 
 return {
 	-- colorscheme
-	require("themes.gruvbox-material"),
+	-- require("themes.gruvbox-material"),
 	-- require("themes.kanagawa"),
-	-- require("themes.catppuccin"),
+	require("themes.catppuccin"),
 	-- require("themes.tokyonight"),
 
 	-- adjusts shift and tab length based on file

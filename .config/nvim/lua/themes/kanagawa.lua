@@ -6,6 +6,6 @@ return {
 	end,
 	opts = {
 		theme = "wave",
-		transparent = true,
+		-- transparent = true,
 	},
 }

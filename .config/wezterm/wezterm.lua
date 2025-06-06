@@ -17,13 +17,14 @@ local color_schemes = {
 }
 
 -- set the color scheme
-config.color_scheme = color_schemes[5]
+config.color_scheme = color_schemes[1]
 
 -- disable tab bar
 config.enable_tab_bar = false
 
 -- set terminal background opacity
-config.window_background_opacity = 0.50
+-- config.window_background_opacity = 0.50
+config.window_background_opacity = 1.00
 
 -- fonts stored in fonts directory
 config.font_dirs = {
@@ -36,7 +37,7 @@ config.font = wezterm.font_with_fallback({
 	-- "Meslo LGM Nerd Font Mono",
 	"Jetbrains Mono",
 })
-config.font_size = 14
+config.font_size = 16
 config.harfbuzz_features = { "calt=0", "clig=0", "liga=0" }
 
 -- disable annoying system bell
