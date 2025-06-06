@@ -8,7 +8,7 @@ alias ln='ln -iv'
 alias ls='ls -shN --color=auto --group-directories-first'
 
 # open neovim instead of vim
-# alias vim='nvim'
+alias vim='nvim'
 
 # always show gcc warnings
 alias gcc='gcc -Wall -Wextra -pedantic'
