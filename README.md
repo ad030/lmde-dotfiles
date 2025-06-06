@@ -5,6 +5,7 @@ My personal config on LMDE 6.
 ## What I Use
 
 - i3
+  - i3lock-fancy
 - Polybar
 - Picom
 - Wezterm
@@ -13,7 +14,6 @@ My personal config on LMDE 6.
 
 ## Dependencies
 
-- `Meslo LGM Nerd Font Mono` font
 - `Jetbrains Mono` font
 - `font-awesome` font
 - Neovim 0.10.0+
@@ -25,7 +25,7 @@ I use the method of tracking my dotfiles described on the [Arch Wiki](wiki.archl
 For future me to clone onto a new device, run the following commands:
 
 ```bash
-$ git clone --bare git@github.com:ad030/.dotfiles $HOME/.dotfiles
+$ git clone --bare https://github.com/ad030/.dotfiles.git $HOME/.dotfiles
 $ alias dotfiles='/usr/bin/git --git-dir="$HOME/.dotfiles/" --work-tree="$HOME"'
 $ mkdir -p .dotfiles-backup && \
   dotfiles checkout 2>&1 | egrep "\s\." | awk {'print $1'} | \

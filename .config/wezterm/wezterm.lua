@@ -38,6 +38,7 @@ config.font = wezterm.font_with_fallback({
 	"Jetbrains Mono",
 })
 config.font_size = 16
+config.font = wezterm.font("JetBrains Mono")
 config.harfbuzz_features = { "calt=0", "clig=0", "liga=0" }
 
 -- disable annoying system bell
