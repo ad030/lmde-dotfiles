@@ -285,8 +285,8 @@ set $mantle #181825
 set $crust #11111b
 
 # target                        title           bg              text            indicator       border
-client.focused                  $sapphire       $base           $darkgray       $sapphire       $sapphire
-client.focused_inactive         $overlay0       $base           $text           $base           $base
+client.focused                  $sapphire       $base           $text           $sapphire       $sapphire
+client.focused_inactive         $text           $base           $text           $base           $base
 client.unfocused                $overlay0       $base           $text           $base           $base
 client.urgent                   $peach          $base           $peach          $overlay0       $peach
 client.placeholder              $overlay0       $base           $text           $overlay0       $overlay0
@@ -319,7 +319,11 @@ gaps outer 8px
 # gaps top 42px
 
 # borders
-default_border pixel 2
+default_border normal 1
+default_floating_border pixel 1
+
+title_align center
+
 
 # disable mouse focus
 focus_follows_mouse no
