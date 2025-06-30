@@ -65,7 +65,7 @@ opt.inccommand = "split"
 opt.cursorline = true
 
 -- Minimal number of screen lines to keep above and below the cursor.
-opt.scrolloff = 10
+opt.scrolloff = 4
 
 -- 80 column border for good coding style
 opt.cc = "80"
@@ -88,15 +88,7 @@ opt.shiftwidth = 8
 -- replace tabs with equivalent amount of spaces
 opt.expandtab = true
 
-vim.api.nvim_create_autocmd("BufEnter", {
-	callback = function(opts)
-		if vim.bo[opts.buf].filetype == "markdown" then
-			opt.conceallevel = 2
-		end
-	end,
-})
-
-opt.conceallevel = 2
+opt.conceallevel = 1
 
 -- use terminal colors
 opt.termguicolors = true

@@ -7,6 +7,10 @@ return {
 	require("themes.catppuccin"),
 	-- require("themes.tokyonight"),
 
+	{
+		dir = "~/projects/checkin-nvim/",
+	},
+
 	-- adjusts shift and tab length based on file
 	require("plugins.vim-sleuth"),
 
@@ -20,7 +24,7 @@ return {
 	require("plugins.gitsigns"),
 
 	-- startup ascii art plugin
-	require("plugins.alpha-nvim"),
+	require("plugins.alpha"),
 
 	-- displays possible commands based on what keys have been pressed
 	require("plugins.which-key"),
@@ -37,11 +41,15 @@ return {
 	-- html color highlighting
 	require("plugins.nvim-colorizer"),
 
-	-- markdown previewer plugin
-	require("plugins.markview-nvim"),
+	-- preview markdown in neovim
+	-- require("plugins.markview-nvim"),
+	require("plugins.render-markdown"),
+
+	-- view markdown files in separate window
+	require("plugins.markdown-preview"),
 
 	-- obsidian note taking
-	require("plugins.obsidian-nvim"),
+	require("plugins.obsidian"),
 
 	-- code debugger protocol
 	require("plugins.nvim-dap"),
@@ -58,12 +66,6 @@ return {
 	-- various plugins
 	require("plugins.mini"),
 
-	-- preview markdown files
-	require("plugins.markdown-preview"),
-
-	-- automatically close brackets
-	-- require("plugins.autoclose"),
-
 	-- terminal in neovim plugin
 	require("plugins.toggleterm"),
 
@@ -77,7 +79,7 @@ return {
 	require("plugins.neo-tree"),
 
 	-- function stack visualizer
-	require("plugins.hierarchy-nvim"),
+	require("plugins.hierarchy"),
 
 	-- NOTE: The import below can automatically add your own plugins, configuration, etc from `lua/custom/plugins/*.lua`
 	--    This is the easiest way to modularize your config.

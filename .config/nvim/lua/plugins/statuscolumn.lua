@@ -1,3 +1,5 @@
+
+--[[
 local status = {}
 
 status.border = function()
@@ -13,3 +15,4 @@ status.main = function()
 end
 
 return status
+]]--
