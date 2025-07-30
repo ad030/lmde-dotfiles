@@ -39,6 +39,12 @@ function mute_volume {
 	pactl set-sink-mute $default_sink $1
 }
 
+function startup_mute {
+	pactl set-sink-volume $default_sink 0%
+	pactl set-sink-mute $default_sink 1
+
+}
+
 
 function is_number {
 	local value = "$1"
@@ -60,6 +66,9 @@ case "$action" in
 		;;
 	dec)
 		lower_volume $interval
+		;;
+	fullmute)
+		startup_mute
 		;;
 	*)
 		usage_error

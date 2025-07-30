@@ -10,7 +10,7 @@
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
 # Mod1 is Alt key
-# Mod2 is Windows key
+# Mod4 is Windows key
 set $mod Mod1
 set $sup Mod4
 
@@ -21,7 +21,7 @@ set $scripts ~/.config/i3/scripts/
 # is used in the bar {} block below.
 
 # mute on startup
-exec_always --no-startup-id "$scripts/volume.sh mute"
+exec_always --no-startup-id "$scripts/volume.sh fullmute"
 
 
 font pango:JetBrains Mono NL Medium 16
@@ -52,6 +52,9 @@ bindsym $sup+Shift+p exec $locker
 # https://wiki.archlinux.org/index.php/XDG_Autostart
 exec --no-startup-id dex --autostart --environment i3
 
+exec_always --no-startup-id "xrandr --output eDP-1 --primary"
+exec_always --no-startup-id "xrandr --output HDMI-1 --mode 1920x1080"
+
 # The combination of xss-lock, nm-applet and pactl is a popular choice, so
 # they are included here as an example. Modify as you see fit.
 
@@ -65,9 +68,9 @@ exec --no-startup-id nm-applet
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
-bindsym $sup+XF86AudioRaiseVolume exec --no-startup-id "$scripts/volume.sh inc"
-bindsym $sup+XF86AudioLowerVolume exec --no-startup-id "$scripts/volume.sh dec"
-bindsym $sup+XF86AudioMute exec --no-startup-id "$scripts/volume.sh toggle"
+bindsym $sup+Shift+b exec --no-startup-id "$scripts/volume.sh dec"
+bindsym $sup+Shift+n exec --no-startup-id "$scripts/volume.sh inc"
+bindsym $sup+Shift+m exec --no-startup-id "$scripts/volume.sh toggle"
 bindsym $sup+XF86AudioMicMute exec --no-startup-id "$scripts/mic_mute.sh"
 
 # use brightnessctl to adjust screen brightness
@@ -256,6 +259,18 @@ for_window [class="sayonara"] move to workspace $ws10
 for_window [class="spotify"] move to workspace $ws10
 for_window [class="Minecraft.*"] move to workspace $ws8
 
+# tenth workspace gets shared to hdmi
+workspace 1 output primary
+workspace 2 output primary
+workspace 3 output primary
+workspace 4 output primary
+workspace 5 output primary
+workspace 6 output primary
+workspace 7 output primary
+workspace 8 output primary
+workspace 9 output primary
+workspace 10 output HDMI-1 primary 
+
 # catppuccin mocha theme
 set $rosewater #f5e0dc
 set $flamingo #f2cdcd
@@ -327,3 +342,5 @@ title_align center
 
 # disable mouse focus
 focus_follows_mouse no
+
+
