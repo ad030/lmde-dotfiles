@@ -74,8 +74,8 @@ bindsym $sup+Shift+m exec --no-startup-id "$scripts/volume.sh toggle"
 bindsym $sup+XF86AudioMicMute exec --no-startup-id "$scripts/mic_mute.sh"
 
 # use brightnessctl to adjust screen brightness
-bindsym $sup+XF86MonBrightnessUp exec --no-startup-id "$scripts/brightness.sh inc"
-bindsym $sup+XF86MonBrightnessDown exec --no-startup-id "$scripts/brightness.sh dec"
+bindsym $sup+Shift+z exec --no-startup-id "$scripts/brightness.sh dec"
+bindsym $sup+Shift+x exec --no-startup-id "$scripts/brightness.sh inc"
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $sup
