@@ -24,7 +24,7 @@ config.enable_tab_bar = false
 
 -- set terminal background opacity
 -- config.window_background_opacity = 0.50
-config.window_background_opacity = 0.90
+config.window_background_opacity = 0.55
 
 -- fonts stored in fonts directory
 config.font_dirs = {
