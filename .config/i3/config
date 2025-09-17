@@ -252,12 +252,12 @@ exec_always --no-startup-id "$HOME/.config/polybar/launch.sh --catppuccin"
 
 
 # allocate applications to workspaces
-for_window [class="firefox*"] move to workspace $ws2
-for_window [class="steam"] move to workspace $ws7
-for_window [class="PrismLauncher"] move to workspace $ws7
-for_window [class="sayonara"] move to workspace $ws10
-for_window [class="spotify"] move to workspace $ws10
-for_window [class="Minecraft.*"] move to workspace $ws8
+# for_window [class="firefox*"] move to workspace $ws2
+# for_window [class="steam"] move to workspace $ws7
+# for_window [class="PrismLauncher"] move to workspace $ws7
+# for_window [class="sayonara"] move to workspace $ws10
+# for_window [class="spotify"] move to workspace $ws10
+# for_window [class="Minecraft.*"] move to workspace $ws8
 
 # tenth workspace gets shared to hdmi
 workspace 1 output primary
