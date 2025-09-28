@@ -23,7 +23,24 @@ local function startup_layout()
 		}
 	end
 
-	local function footer()
+	local function nvim_version()
+		local type = "text"
+
+		local opts = {
+			position = "center",
+			hl = "Number",
+		}
+
+		local val = "v" .. vim.version()[1] .. "." .. vim.version()[2] .. "." .. vim.version()[3]
+
+		return {
+			["type"] = type,
+			["opts"] = opts,
+			["val"] = val,
+		}
+	end
+
+	local function plugin_stats()
 		local stats = require("lazy").stats()
 
 		local type = "text"
@@ -53,16 +70,16 @@ local function startup_layout()
 	local section = {
 		["header"] = header(),
 		["button"] = button(),
-		["footer"] = footer(),
 	}
 
 	local config = {
 		layout = {
 			{ type = "padding", val = 2 },
-			section.header,
+			header(),
 			{ type = "padding", val = 2 },
-			section.buttons,
-			section.footer,
+			button(),
+			nvim_version(),
+			plugin_stats(),
 		},
 		opts = {
 			margin = 5,
@@ -86,7 +103,6 @@ return {
 	},
 
 	opts = function()
-		local opts = startup_layout().config
-		return opts
+		return startup_layout().config
 	end,
 }
