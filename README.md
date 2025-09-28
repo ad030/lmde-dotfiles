@@ -4,13 +4,18 @@ My personal config on LMDE 6.
 
 ## What I Use
 
+- Wezterm
+- Rofi
+- Neovim
+
+Using X11:
 - i3
   - i3lock-fancy
 - Polybar
 - Picom
-- Wezterm
-- Rofi
-- Neovim
+
+Or using Wayland:
+- sway (and swaybar)
 
 ## Dependencies
 
@@ -20,9 +25,9 @@ My personal config on LMDE 6.
 
 ## Cloning
 
-I use the method of tracking my dotfiles described on the [Arch Wiki](wiki.archlinux.org/title/Dotfiles#Tracking_dotfiles_directly_with_Git).
+I use the method of tracking dotfiles described on the [Arch Wiki](wiki.archlinux.org/title/Dotfiles#Tracking_dotfiles_directly_with_Git).
 
-For future me to clone onto a new device, run the following commands:
+To clone onto a new device, run the following commands:
 
 ```bash
 $ git clone --bare https://github.com/ad030/.dotfiles.git $HOME/.dotfiles
@@ -35,3 +40,5 @@ $ dotfiles config --local status.showUntrackedFiles no
 
 Alternatively, replace the third line with `dotfiles checkout -f`.
 This overwrites existing dotfiles (such as .bashrc and .bash_aliases) without copying them to a separate file.
+
+
