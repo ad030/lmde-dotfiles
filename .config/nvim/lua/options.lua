@@ -88,7 +88,7 @@ opt.shiftwidth = 8
 -- replace tabs with equivalent amount of spaces
 opt.expandtab = true
 
-opt.conceallevel = 1
+opt.conceallevel = 0
 
 -- use terminal colors
 opt.termguicolors = true
