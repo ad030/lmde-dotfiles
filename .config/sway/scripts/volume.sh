@@ -6,14 +6,19 @@ LC_ALL=C
 
 default_sink=$(pactl get-default-sink)
 max_volume_percent=200
-interval=5
+if [ $2 ]; then
+	delta=$2;
+else
+	delta=5;
+fi
 
 action="$1"
 
 function usage_error {
-	echo "Usage: $(basename $0) inc|dec|mute|unmute|toggle"
+	echo "Usage: $(basename $0) inc|dec|mute|unmute|toggle|fullmute"
 	exit 1
 }
+
 
 function calc {
 	echo "scale=5; $@" | bc
@@ -62,10 +67,10 @@ case "$action" in
 		mute_volume toggle
 		;;
 	inc)
-		raise_volume $interval
+		raise_volume $delta
 		;;
 	dec)
-		lower_volume $interval
+		lower_volume $delta
 		;;
 	fullmute)
 		startup_mute

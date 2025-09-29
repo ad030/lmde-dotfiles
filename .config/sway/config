@@ -59,6 +59,17 @@ exec swayidle -w \
 # your displays after another 300 seconds, and turn your screens back on when
 # resumed. It will also lock your screen before your computer goes to sleep.
 
+# mute on startup
+exec ./scripts/volume.sh fullmute
+
+# volume and brightness buttons
+bindsym $sup+XF86AudioMute exec "./scripts/volume.sh toggle"
+bindsym $sup+XF86AudioLowerVolume exec "./scripts/volume.sh dec"
+bindsym $sup+XF86AudioRaiseVolume exec "./scripts/volume.sh inc"
+
+bindsym $sup+XF86MonBrightnessUp exec "./scripts/brightness.sh inc"
+bindsym $sup+XF86MonBrightnessDown exec "./scripts/brightness.sh dec"
+
 ### Input configuration
 #
 # Example configuration:
@@ -77,27 +88,34 @@ exec swayidle -w \
 #
 # Basics:
 #
-    # Start a terminal
-    bindsym $sup+Return exec $term
+# Start a terminal
+bindsym $sup+Return exec $term
 
-    # Kill focused window
-    bindsym $sup+Shift+q kill
+# Kill focused window
+bindsym $sup+Shift+q kill
 
-    # Start your launcher
-    bindsym $sup+d exec $menu
+# Start your launcher
+bindsym $sup+d exec $menu
 
-    # Drag floating windows by holding down $mod and left mouse button.
-    # Resize them with right mouse button + $mod.
-    # Despite the name, also works for non-floating windows.
-    # Change normal to inverse to use left mouse button for resizing and right
-    # mouse button for dragging.
-    floating_modifier $sup normal
+# make Screenshots directory if does not already exist
+exec "if [ ! -d ~/Pictures/Screenshots ]; then mkdir ~/Pictures/Screenshots; fi"
+# screenshot on wayland
+# save to Screenshots directory
+bindsym $sup+Shift+s exec "grim ~/Pictures/Screenshots/$(date +%Y-%m-%dT%H%M%S).png"
 
-    # Reload the configuration file
-    bindsym $sup+Shift+r reload
 
-    # Exit sway (logs you out of your Wayland session)
-    bindsym $sup+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
+# Drag floating windows by holding down $mod and left mouse button.
+# Resize them with right mouse button + $mod.
+# Despite the name, also works for non-floating windows.
+# Change normal to inverse to use left mouse button for resizing and right
+# mouse button for dragging.
+floating_modifier $sup normal
+
+# Reload the configuration file
+bindsym $sup+Shift+r reload
+
+# Exit sway (logs you out of your Wayland session)
+bindsym $sup+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
 #
 # Moving around:
 #
@@ -256,35 +274,35 @@ set $crust #11111b
 # Status Bar:
 #
 # Read `man 5 sway-bar` for more information about this section.
-bar {
-    position top
-
-    gaps 0
-    mode dock
-
-    separator_symbol "|"
-    font JetBrains Mono
-
-    strip_workspace_name yes
-
-    # When the status_command prints a new line to stdout, swaybar updates.
-    # The default just shows the current date and time.
-    # status_command while date +'%Y-%m-%d %I:%M:%S %p'; do sleep 1; done
-    status_command while true; do ~/.config/sway/scripts/swaybar.sh; sleep 15; done
-
-    colors {
-        statusline $text
-        background $base
-        separator $text
-        inactive_workspace $base $base $text
-        focused_workspace $sapphire $surface1 $text
-    }
-}
+# bar {
+#     position top
+#
+#     gaps 0
+#     mode dock
+#
+#     separator_symbol "|"
+#     font JetBrains Mono
+#
+#     strip_workspace_name yes
+#
+#     # When the status_command prints a new line to stdout, swaybar updates.
+#     # The default just shows the current date and time.
+#     # status_command while date +'%Y-%m-%d %I:%M:%S %p'; do sleep 1; done
+#     status_command while true; do ~/.config/sway/scripts/swaybar.sh; sleep 15; done
+#
+#     colors {
+#         statusline $text
+#         background $base
+#         separator $text
+#         inactive_workspace $base $base $text
+#         focused_workspace $sapphire $surface1 $text
+#     }
+# }
 
 # use waybar
-# bar {
-#     swaybar_command waybar
-# }
+bar {
+    swaybar_command waybar
+}
 
 # allocate applications to workspaces
 # for_window [class="Firefox.*"] move to workspace $ws2

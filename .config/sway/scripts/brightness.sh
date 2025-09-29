@@ -1,7 +1,12 @@
 #! /usr/bin/bash
 
 min_brightness=$(($(brightnessctl m) * 5 / 100));
-interval='5%'
+
+if [ $2 ]; then
+	interval=$2;
+else
+	interval=5;
+fi
 
 action=$1
 
@@ -15,10 +20,10 @@ function decrease_brightness {
 
 case "$action" in
 	"inc")
-		increase_brightness $interval
+		increase_brightness "$interval%"
 		;;
 	"dec")
-		decrease_brightness $interval
+		decrease_brightness "$interval%"
 		;;
 	*)
 		;;
