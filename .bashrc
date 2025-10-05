@@ -113,10 +113,6 @@ if ! shopt -oq posix; then
   fi
 fi
 
-# add neovim 10.0 to path
-export PATH="$PATH:/opt/nvim/"
-
-
 # auto start ssh-agent
 # if ! pgrep -u "$USER" ssh-agent > /dev/null; then
 #     ssh-agent -t 1h > "$XDG_RUNTIME_DIR/ssh-agent.env"
@@ -134,5 +130,5 @@ export PATH="$PATH:$HOME/.local/bin/"
 export PATH="$PATH:$HOME/.intellij-idea/bin/"
 
 # use vim as default editor 
-export EDITOR="/usr/bin/nvim"
+export EDITOR="/usr/bin/vim"
 
