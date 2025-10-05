@@ -15,7 +15,7 @@ return {
 	require("plugins.vim-sleuth"),
 
 	-- toggle commenting a line
-	require("plugins.comment"),
+	-- require("plugins.comment"),
 
 	-- highlight syntax
 	require("plugins.nvim-treesitter"),
@@ -33,17 +33,20 @@ return {
 	require("plugins.telescope"),
 
 	-- set up lsps
-	require("plugins.nvim-lspconfig"),
+	-- require("plugins.nvim-lspconfig"),
+	require("plugins.mason"),
+	require("plugins.mason-tool-installer"),
+	-- require("plugins.mason-lspconfig"),
 
 	-- config jdtls lsp
-	require("plugins.nvim-jdtls"),
+	-- require("plugins.nvim-jdtls"),
 
 	-- html color highlighting
 	require("plugins.nvim-colorizer"),
 
 	-- preview markdown in neovim
-	-- require("plugins.markview-nvim"),
-	require("plugins.render-markdown"),
+	require("plugins.markview"),
+	-- require("plugins.render-markdown"),
 
 	-- view markdown files in separate window
 	require("plugins.markdown-preview"),
@@ -57,14 +60,21 @@ return {
 	-- code formatter
 	require("plugins.conform"),
 
-	-- autocompletion for code
-	require("plugins.nvim-cmp"),
-
 	-- highlight todo comments
 	require("plugins.todo-comments"),
 
-	-- various plugins
-	require("plugins.mini"),
+	-- icons
+	require("plugins.mini-icons"),
+
+	-- more text motions (inside, around, surround)
+	require("plugins.mini-ai"),
+	require("plugins.mini-surround"),
+	require("plugins.mini-diff"),
+
+	-- simple status line
+	require("plugins.mini-statusline"),
+	-- autocompletion for code
+	require("plugins.mini-completion"),
 
 	-- terminal in neovim plugin
 	require("plugins.toggleterm"),
@@ -79,7 +89,7 @@ return {
 	require("plugins.neo-tree"),
 
 	-- function stack visualizer
-	require("plugins.hierarchy"),
+	-- require("plugins.hierarchy"),
 
 	-- NOTE: The import below can automatically add your own plugins, configuration, etc from `lua/custom/plugins/*.lua`
 	--    This is the easiest way to modularize your config.

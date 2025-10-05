@@ -1,5 +1,5 @@
 -- import plugins
-local plugins = require("lazy-plugins")
+-- local plugins = require("lazy-plugins")
 
 -- [[ Install `lazy.nvim` plugin manager ]]
 --    See `:help lazy.nvim.txt` or https://github.com/folke/lazy.nvim for more info
@@ -43,4 +43,4 @@ local opts = {
 	},
 }
 
-require("lazy").setup(plugins, opts)
+require("lazy").setup("plugins" , opts)
