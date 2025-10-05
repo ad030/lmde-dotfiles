@@ -2,5 +2,10 @@
 
 return {
 	"nvim-mini/mini.diff",
-	opts = {},
+	version = "*",
+	opts = {
+		view = {
+			signs = { add = "+", change = "~", delete = "_" },
+		},
+	},
 }

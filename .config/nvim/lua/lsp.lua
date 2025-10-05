@@ -84,4 +84,6 @@ vim.lsp.enable({
 	"lua_ls",
 	"clangd",
 	"ts_ls",
+	"pyright",
+	"jdtls",
 })

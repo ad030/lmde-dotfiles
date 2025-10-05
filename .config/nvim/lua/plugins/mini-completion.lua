@@ -6,5 +6,15 @@ return {
 		"nvim-mini/mini.icons",
 		"nvim-mini/mini.snippets",
 	},
-	opts = {},
+	version = "*",
+	opts = {
+		window = {
+			info = {
+				border = { "┌", "─", "┐", "│", "┘", "─", "└", "│" },
+			},
+			signature = {
+				border = { "┌", "─", "┐", "│", "┘", "─", "└", "│" },
+			},
+		},
+	},
 }

@@ -1,14 +1,12 @@
 return {
-	{
-		"akinsho/toggleterm.nvim",
+	"akinsho/toggleterm.nvim",
 
-		event = "VeryLazy",
+	event = "VeryLazy",
 
-		version = "*",
+	version = "*",
 
-		opts = {
-			size = 10,
-			open_mapping = "<leader>tt",
-		},
+	opts = {
+		size = 10,
+		open_mapping = "<leader>tt",
 	},
 }
