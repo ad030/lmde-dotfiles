@@ -7,13 +7,13 @@ local project_name = vim.fn.fnamemodify(vim.fn.getcwd(), ":p:h:t")
 -- jdtls workspace directory
 local workspace_path = vim.fn.stdpath("data") .. "/jdtls-workspace"
 
-local workspace_dir = workspace_path .. "-" .. project_name
+local workspace_dir = workspace_path .. "/" .. project_name
 
 -- mason path
 local mason_path = vim.fn.stdpath("data") .. "/mason"
 
 -- language server location
-local jdtls_path = require("mason-registry").get_package("jdtls"):get_install_path()
+local jdtls_path = vim.fn.expand("$MASON/packages/jdtls")
 
 -- lombok location
 local lombok_path = mason_path .. "/packages/lombok-nightly/lombok.jar"
