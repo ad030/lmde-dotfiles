@@ -1,5 +1,5 @@
 return {
-	"epwalsh/obsidian.nvim",
+	"obsidian-nvim/obsidian.nvim",
 	version = "*",
 	lazy = true,
 	ft = "markdown",
@@ -36,7 +36,7 @@ return {
 		},
 
 		completion = {
-			nvim_cmp = true,
+			nvim_cmp = false,
 			min_chars = 2,
 		},
 
@@ -58,6 +58,7 @@ return {
 			},
 		},
 
+		--[[
 		note_id_func = function(title)
 			local suffix = ""
 			if title ~= nil then
@@ -70,6 +71,8 @@ return {
 
 			return tostring(os.time()) .. "-" .. suffix
 		end,
+		]]
+		--
 
 		wiki_link_func = "prepend_note_path",
 
