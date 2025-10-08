@@ -35,3 +35,5 @@ if [ -f "$SSH_ENV" ]; then
 else
     start_agent 
 fi 
+
+if [ -e /home/ad030/.nix-profile/etc/profile.d/nix.sh ]; then . /home/ad030/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
