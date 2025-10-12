@@ -6,6 +6,7 @@ Required packages for some plugins to work:
 - `npm`
 - `tree-sitter-cli`
 - `python3.11-venv`
+- `cargo`
 
 ## C development:
 
