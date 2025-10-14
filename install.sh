@@ -13,10 +13,10 @@ fi
 
 create_backup() {
 	# if backup file exists already, do not do anything
-	if [[ -d "$1.bak" || -f "$1.bak" ]]; then
-		echo "$1.bak already exists! will not overwrite";
-		return 1;
-	fi
+	# if [[ -d "$1.bak" || -f "$1.bak" ]]; then
+	# 	echo "$1.bak already exists! will not overwrite";
+	# 	return 1;
+	# fi
 
 	# if file exists, move to backup
 	if [[ -d $1 || -f $1 ]]; then
