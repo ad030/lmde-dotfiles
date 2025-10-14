@@ -4,20 +4,13 @@ My personal config on LMDE 6.
 
 ## What I Use
 
-- Wezterm
 - Rofi
 - Neovim
-
-Using X11:
-
-- i3
-  - i3lock-fancy
-- Polybar
-- Picom
-
-Or using Wayland:
-
-- sway (and swaybar)
+- Wayland
+  - foot (terminal emulator)
+  - grim (screenshot tool)
+  - sway (compositor)
+  - waybar (bar)
 
 ## Dependencies
 
@@ -27,4 +20,4 @@ Or using Wayland:
 
 ## Cloning
 
-I store all my config files in the directory `~/dotfiles/`, and create symlinks in `~/.config` to these files.
+I store all my config files in the directory `~/dotfiles/`, and create symlinks to `$HOME` and `$HOME/.config` to these files.
