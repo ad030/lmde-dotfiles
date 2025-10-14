@@ -9,6 +9,7 @@ My personal config on LMDE 6.
 - Wayland
   - foot (terminal emulator)
   - grim (screenshot tool)
+  - slurp (screen select tool)
   - sway (compositor)
   - waybar (bar)
 

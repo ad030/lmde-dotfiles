@@ -47,5 +47,6 @@ create_symlink "$dotfiles_path/bash_profile" "$HOME/.bash_profile"
 create_symlink "$dotfiles_path/foot" "$config_path/foot"
 create_symlink "$dotfiles_path/sway" "$config_path/sway"
 create_symlink "$dotfiles_path/rofi" "$config_path/rofi"
+create_symlink "$dotfiles_path/waybar" "$config_path/waybar"
 create_symlink "$dotfiles_path/nvim" "$config_path/nvim"
 
