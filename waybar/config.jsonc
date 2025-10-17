@@ -16,7 +16,9 @@
         "custom/separator",
         "pulseaudio",
         "custom/separator",
-        "battery",
+        "cpu",
+        "custom/separator",
+        "memory",
         "custom/separator",
         "clock",
     ],
@@ -158,7 +160,7 @@
     "network": {
         // "interface": "wlp2*", // (Optional) To force the use of this interface
         // "format-wifi": "{essid} ({signalStrength}%) ",
-        "format-wifi": "",
+        "format-wifi": " {essid}",
         "format-ethernet": " ",
         // "tooltip-format": "{ifname} via {gwaddr}",
         "tooltip-format": "{essid} ({signalStrength}%)\n{ifname} via {gwaddr}\n{ipaddr}/{cidr}",
@@ -168,7 +170,7 @@
     },
     "pulseaudio": {
         // "scroll-step": 1, // %, can be a float
-        "format": "{icon}",
+        "format": "{icon} {volume}%",
         "format-bluetooth": " {volume}% {icon}",
         "format-bluetooth-muted": " MUTED",
         "format-muted": "",
