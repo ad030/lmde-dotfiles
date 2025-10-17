@@ -1,8 +1,8 @@
-# assumes dotfiles were cloned into home directory as "dotfiles" 
-# /home/user/dotfiles or ~/dotfiles
+# assumes dotfiles were cloned into home directory as "lmde-dotfiles" 
+# /home/user/lmde-dotfiles or ~/lmde-dotfiles or $HOME/lmde-dotfiles
 # script does not work otherwise
 
-dotfiles_path="$HOME/dotfiles"
+dotfiles_path="$HOME/lmde-dotfiles"
 config_path="$HOME/.config"
 
 if [ ! -d $dotfiles_path ]; then
