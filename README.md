@@ -6,6 +6,7 @@ My personal config on LMDE 7.
 
 - Rofi
 - Neovim
+- Zathura
 - Wayland
   - foot (terminal emulator)
   - grim (screenshot tool)

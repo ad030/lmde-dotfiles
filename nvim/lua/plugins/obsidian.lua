@@ -23,6 +23,19 @@ return {
 				name = "personal",
 				path = "~/vaults/personal-notes/",
 			},
+			{
+				name = "no-vault",
+				path = function() assert(vim.fn.getcwd()) end,
+				overrides = {
+					notes_subdir = vim.NIL,
+					new_notes_location = "current_dir",
+					templates = {
+						folder = vim.NIL,
+					},
+					disable_frontmatter = true,
+					mappings = {},
+				},
+			},
 		},
 
 		notes_subdir = "000_notes",
