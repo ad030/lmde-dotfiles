@@ -12,6 +12,7 @@ My personal config on LMDE 6.
   - slurp (screen select tool)
   - sway (compositor)
   - waybar (bar)
+  - wl-clipboard
 
 ## Dependencies
 

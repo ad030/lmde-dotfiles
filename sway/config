@@ -38,7 +38,7 @@ include /etc/sway/config-vars.d/*
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * bg ~/dotfiles/wallpapers/archaeologist_edition.png fill
+output * bg ~/lmde-dotfiles/wallpapers/archaeologist_edition.png fill
 
 # Example configuration:
 #
