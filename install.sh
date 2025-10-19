@@ -36,9 +36,12 @@ create_symlink() {
 	# only create symlink if backup at location is successfully created
 	if [[ ! -L $2 && $backup -eq 0 ]]; then
 		ln -sf $1 $2;	
-		echo "symlink to $1 created successfully";
+		echo "symlink to $1 created successfully at $2";
 	elif [[ -L $2 ]]; then
-		echo "symlink already exists at $2";
+		rm $2;
+		ln -sf $1 $2;	
+		echo "symlink already exists at $2; deleted";
+		echo "symlink to $1 created successfully at $2";
 	else 
 		echo "symlink to $1 not created";
 	fi
