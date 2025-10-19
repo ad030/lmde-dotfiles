@@ -28,6 +28,13 @@ exec {
 # set $term wezterm
 set $term foot
 
+# directories to be used in sway config
+set $dotfiles_dir ~/lmde-dotfiles
+set $wallpaper_dir $dotfiles_dir/wallpapers
+set $scripts_dir $dotfiles_dir/scripts
+set $screenshots_dir ~/Pictures/Screenshots
+
+
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
@@ -38,7 +45,7 @@ include /etc/sway/config-vars.d/*
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * bg ~/lmde-dotfiles/wallpapers/archaeologist_edition.png fill
+output * bg $wallpaper_dir/archaeologist_edition.png fill
 
 # Example configuration:
 #
@@ -62,20 +69,16 @@ exec swayidle -w \
 # lock screen manually
 
 
-# This will lock your screen after 300 seconds of inactivity, then turn off
-# your displays after another 300 seconds, and turn your screens back on when
-# resumed. It will also lock your screen before your computer goes to sleep.
-
 # mute on startup
-exec ./scripts/volume.sh fullmute
+exec $scripts_dir/volume.sh fullmute
 
 # volume and brightness buttons
-bindsym $sup+XF86AudioMute exec "./scripts/volume.sh toggle"
-bindsym $sup+XF86AudioLowerVolume exec "./scripts/volume.sh dec"
-bindsym $sup+XF86AudioRaiseVolume exec "./scripts/volume.sh inc"
+bindsym $sup+XF86AudioMute exec "$scripts_dir/volume.sh toggle"
+bindsym $sup+XF86AudioLowerVolume exec "$scripts_dir/volume.sh dec"
+bindsym $sup+XF86AudioRaiseVolume exec "$scripts_dir/volume.sh inc"
 
-bindsym $sup+XF86MonBrightnessUp exec "./scripts/brightness.sh inc"
-bindsym $sup+XF86MonBrightnessDown exec "./scripts/brightness.sh dec"
+bindsym $sup+XF86MonBrightnessUp exec "$scripts_dir/brightness.sh inc"
+bindsym $sup+XF86MonBrightnessDown exec "$scripts_dir/brightness.sh dec"
 
 ### Input configuration
 #
@@ -108,9 +111,9 @@ bindsym $sup+d exec $menu
 exec "if [ ! -d ~/Pictures/Screenshots ]; then mkdir ~/Pictures/Screenshots; fi"
 # screenshot on wayland
 # save to Screenshots directory
-set $screenshots_dir ~/Pictures/Screenshots/$(date +%Y-%m-%dT%H%M%S).png
 
-bindsym $sup+Shift+s exec "grim $screenshots_dir && wl-copy --paste-once < $screenshots_dir"
+set $screenshot_name $(date +%Y-%m-%dT%H%M%S).png
+bindsym $sup+Shift+s exec "grim -g \"$(slurp)\" $screenshots_dir/$screenshot_name | wl-copy --paste-once"
 
 # Drag floating windows by holding down $mod and left mouse button.
 # Resize them with right mouse button + $mod.
