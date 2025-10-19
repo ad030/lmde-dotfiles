@@ -69,8 +69,11 @@ exec swayidle -w \
 # lock screen manually
 
 
+# mount removable drives
+exec udiskie-mount -a
+
 # mute on startup
-exec $scripts_dir/volume.sh fullmute
+# exec $scripts_dir/volume.sh fullmute
 
 # volume and brightness buttons
 bindsym $sup+XF86AudioMute exec "$scripts_dir/volume.sh toggle"
@@ -126,7 +129,10 @@ floating_modifier $sup normal
 bindsym $sup+Shift+r reload
 
 # Exit sway (logs you out of your Wayland session)
-bindsym $sup+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
+bindsym $sup+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'udiskie-umount -a && swaymsg exit'
+# bindsym $sup+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
+
+
 #
 # Moving around:
 #

@@ -19,34 +19,36 @@ create_backup() {
 	# fi
 
 	# if file exists, move to backup
-	if [[ -d $1 || -f $1 ]]; then
-		cp $1 $1.bak;
-	fi
+	# if [[ -d $1 || -f $1 ]]; then
+	# 	cp $1 $1.bak;
+	# fi
 
 	return 0
 }
 
 create_symlink() {
-	backup=create_backup $2
+	ln -sf $1 $2;	
+
+	# backup=create_backup $2
 
 	# arg 1 is file pointed to
 	# arg 2 is location of symlink
 	# only create symlink if backup at location is successfully created
-	if [[ $backup -eq 0 ]]; then
-		ln -sf $1 $2;	
-		echo "symlink at $2 created successfully"
-	else
-		echo "symlink not made at $2"
-	fi
+	# if [[ $backup -eq 0 ]]; then
+	# 	ln -sf $1 $2;	
+	# 	echo "symlink at $2 created successfully"
+	# else
+	# 	echo "symlink not made at $2"
+	# fi
 }
 
 create_symlink "$dotfiles_path/bashrc" "$HOME/.bashrc"
 create_symlink "$dotfiles_path/bash_aliases" "$HOME/.bash_aliases"
 create_symlink "$dotfiles_path/bash_profile" "$HOME/.bash_profile"
 
-create_symlink "$dotfiles_path/foot" "$config_path/foot"
-create_symlink "$dotfiles_path/sway" "$config_path/sway"
-create_symlink "$dotfiles_path/rofi" "$config_path/rofi"
-create_symlink "$dotfiles_path/waybar" "$config_path/waybar"
-create_symlink "$dotfiles_path/nvim" "$config_path/nvim"
+create_symlink "$dotfiles_path/foot" "$config_path/"
+create_symlink "$dotfiles_path/sway" "$config_path/"
+create_symlink "$dotfiles_path/rofi" "$config_path/"
+create_symlink "$dotfiles_path/waybar" "$config_path/"
+create_symlink "$dotfiles_path/nvim" "$config_path/"
 

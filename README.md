@@ -7,6 +7,7 @@ My personal config on LMDE 7.
 - Rofi
 - Neovim
 - Zathura
+- udiskie (to auto mount hard drives)
 - Wayland
   - foot (terminal emulator)
   - grim (screenshot tool)
