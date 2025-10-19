@@ -113,7 +113,7 @@ exec "if [ ! -d ~/Pictures/Screenshots ]; then mkdir ~/Pictures/Screenshots; fi"
 # save to Screenshots directory
 
 set $screenshot_name $(date +%Y-%m-%dT%H%M%S).png
-bindsym $sup+Shift+s exec "grim -g \"$(slurp)\" $screenshots_dir/$screenshot_name | wl-copy --paste-once"
+bindsym $sup+Shift+s exec grim -g "$(slurp)" $screenshots_dir/$screenshot_name && wl-copy --paste-once < $screenshots_dir/$screenshot_name
 
 # Drag floating windows by holding down $mod and left mouse button.
 # Resize them with right mouse button + $mod.
