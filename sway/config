@@ -70,10 +70,11 @@ exec swayidle -w \
 
 
 # mount removable drives
+exec "if [[ ! $(which udiskie) ]]; then notify-send -u normal -t 5000 'Warning: udiskie not installed'; fi"
 exec udiskie-mount -a
 
 # mute on startup
-# exec $scripts_dir/volume.sh fullmute
+exec $scripts_dir/volume.sh fullmute
 
 # volume and brightness buttons
 bindsym $sup+XF86AudioMute exec "$scripts_dir/volume.sh toggle"
@@ -82,6 +83,7 @@ bindsym $sup+XF86AudioRaiseVolume exec "$scripts_dir/volume.sh inc"
 
 bindsym $sup+XF86MonBrightnessUp exec "$scripts_dir/brightness.sh inc"
 bindsym $sup+XF86MonBrightnessDown exec "$scripts_dir/brightness.sh dec"
+
 
 ### Input configuration
 #
