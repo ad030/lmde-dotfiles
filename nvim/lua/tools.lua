@@ -1,4 +1,4 @@
-local tools_by_filetype = {
+return {
 	c = {
 		formatters = {
 			"clang-format",
@@ -10,7 +10,7 @@ local tools_by_filetype = {
 
 	sql = {
 		formatters = {
-			"sql_formatter",
+			"sql-formatter",
 		},
 	},
 
@@ -19,7 +19,7 @@ local tools_by_filetype = {
 			"stylua",
 		},
 		lsp = {
-			"lua_ls",
+			"lua-language-server",
 		},
 	},
 
@@ -66,7 +66,7 @@ local tools_by_filetype = {
 			"eslint_d",
 		},
 		lsp = {
-			"tsserver",
+			"typescript-language-server",
 		},
 	},
 
@@ -124,14 +124,18 @@ local tools_by_filetype = {
 		},
 	},
 
-	verilog = {
-		formatters = {
-			"clang-format",
-		},
+	-- verilog = {
+	-- 	formatters = {
+	-- 		"clang-format",
+	-- 	},
+	-- 	lsp = {
+	-- 		"hdl-checker",
+	-- 	},
+	-- },
+
+	vim = {
 		lsp = {
-			"hdl-checker",
+			"vim-language-server",
 		},
 	},
 }
-
-return tools_by_filetype
