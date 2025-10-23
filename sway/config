@@ -129,7 +129,7 @@ floating_modifier $sup normal
 bindsym $sup+Shift+r reload
 
 # Exit sway (logs you out of your Wayland session)
-bindsym $sup+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'udiskie-umount -a && swaymsg exit'
+bindsym $sup+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit && udiskie-umount'
 # bindsym $sup+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
 
 
