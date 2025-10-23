@@ -7,4 +7,4 @@ g.mapleader = ","
 g.maplocalleader = ","
 
 -- Set to true if you have a Nerd Font installed
-g.have_nerd_font = true
+g.have_nerd_font = false

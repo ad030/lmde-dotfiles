@@ -30,3 +30,6 @@ alias ......="cd ../../../../.."
 # alias for .dotfiles bare repository
 # alias dotfiles='/usr/bin/git --git-dir="$HOME/.dotfiles/" --work-tree="$HOME"'
 
+# alias for getting computer info
+alias computerinfo="inxi -Fxzd"
+

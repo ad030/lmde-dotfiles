@@ -1,27 +1,27 @@
 -- get tools from file
 local function get_tools()
-	local tools = require("../tools")
+	local tools = require("tools")
 
 	local tools_set = {}
 	-- go through all filetypes in tools.lua
-	for _, ft in ipairs(tools) do
+	for _, ft in pairs(tools) do
 		-- get formatters
-		for _, formatter in ipairs(ft.formatters) do
-			if ft.formatters ~= nil then
+		if ft.formatters ~= nil then
+			for _, formatter in pairs(ft.formatters) do
 				tools_set[formatter] = true
 			end
 		end
 
 		-- get lsps
-		for _, lsp in ipairs(ft.lsp) do
-			if ft.lsp ~= nil then
+		if ft.lsp ~= nil then
+			for _, lsp in pairs(ft.lsp) do
 				tools_set[lsp] = true
 			end
 		end
 
 		-- get linters
-		for _, linter in ipairs(ft.linters) do
-			if ft.linters ~= nil then
+		if ft.linters ~= nil then
+			for _, linter in pairs(ft.linters) do
 				tools_set[linter] = true
 			end
 		end
@@ -43,9 +43,12 @@ return {
 	dependencies = {
 		"mason-org/mason.nvim",
 		"jay-babu/mason-nvim-dap.nvim",
-		"mason-org/mason-lspconfig.nvim",
 	},
 	opts = {
 		ensure_installed = get_tools(),
+		run_on_start = true,
+		integrations = {
+			['mason-lspconfig'] = false,
+		},
 	},
 }

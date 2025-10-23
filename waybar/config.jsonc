@@ -10,6 +10,7 @@
         "sway/workspaces",
     ],
     "modules-center": [
+        "clock",
     ],
     "modules-right": [
         "network",
@@ -19,8 +20,6 @@
         "cpu",
         "custom/separator",
         "memory",
-        "custom/separator",
-        "clock",
     ],
     // Modules configuration
     "sway/workspaces": {
