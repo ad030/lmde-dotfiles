@@ -45,10 +45,11 @@ include /etc/sway/config-vars.d/*
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-# output "*" bg $wallpaper_dir/archaeologist_edition.png fill
+# output * bg $wallpaper_dir/archaeologist_edition.png fill
 # output "*" bg ~/lmde-dotfiles/wallpapers/archaeologist_edition.png fill
 
-exec_always swaybg -i $dotfiles_dir/wallpapers/archaeologist_edition.png -m fill
+# exec_always swaybg -i $dotfiles_dir/wallpapers/archaeologist_edition.png -m fill
+exec_always swaybg -i $wallpaper_dir/archaeologist_edition.png -m fill
 
 # Example configuration:
 #
