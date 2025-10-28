@@ -27,31 +27,27 @@ window#waybar {
   color: #cdd6f4;
 }
 
-
 #network,
 #pulseaudio,
 #battery,
-#backlight
-{
-  color: #a6e3a1
+#backlight {
+  color: #a6e3a1;
 }
 
-#battery.warning
-{
-  color: #f9e2af
+#battery.warning {
+  color: #f9e2af;
 }
 
 #network.disconnected,
 #pulseaudio.muted,
-#battery.critical
-{
-  color: #f38ba8
+#battery.critical {
+  color: #f38ba8;
 }
 
-#custom-separator 
-{
+#custom-separator {
   margin: 0;
   padding: 0;
+  color: #45475a;
 }
 
 /*
