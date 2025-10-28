@@ -18,7 +18,7 @@ alias ram='ps axch -o cmd:15,%mem --sort=-%mem | head'
 alias cpu='ps axch -o cmd:15,%cpu --sort=-%cpu | head'
 
 # alias to update apt packages
-alias aptupdate='sudo apt update && sudo apt upgrade -y && sudo apt autoclean && sudo apt autoremove'
+# alias aptupdate='sudo apt update && sudo apt upgrade -y && sudo apt autoclean && sudo apt autoremove'
 
 # aliases for moving back through directories
 alias ..="cd .."
@@ -32,4 +32,7 @@ alias ......="cd ../../../../.."
 
 # alias for getting computer info
 alias computerinfo="inxi -Fxzd"
+
+# alias for updating repos and flatpak software
+alias sysupdate="$HOME/lmde-dotfiles/scripts/system-update.sh"
 
