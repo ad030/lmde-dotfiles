@@ -1,4 +1,4 @@
 return {
-	cmd = { "pyright", "pyright-langserver" },
-	filetypes = { "py" },
+	cmd = { "pyright" },
+	filetypes = { "python" },
 }
