@@ -10,7 +10,7 @@ return {
 
 	sql = {
 		formatters = {
-			"sql-formatter",
+			"sleek",
 		},
 	},
 
