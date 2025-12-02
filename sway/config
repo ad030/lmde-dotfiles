@@ -45,7 +45,7 @@ include /etc/sway/config-vars.d/*
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * bg $wallpaper_dir/archaeologist_edition.png fill
+output '*' bg $wallpaper_dir/archaeologist_edition.png fill
 # output "*" bg ~/lmde-dotfiles/wallpapers/archaeologist_edition.png fill
 
 # exec_always swaybg -i $dotfiles_dir/wallpapers/archaeologist_edition.png -m fill
@@ -74,8 +74,8 @@ exec swayidle -w \
 
 
 # mount removable drives
-exec "if [[ ! $(which udiskie) ]]; then notify-send -u normal -t 5000 'Warning: udiskie not installed'; fi"
-exec udiskie-mount -a
+# exec "if [[ ! $(which udiskie) ]]; then notify-send -u normal -t 5000 'Warning: udiskie not installed'; fi"
+exec $scripts_dir/mount-disks.sh
 
 # mute on startup
 exec $scripts_dir/volume.sh fullmute
@@ -135,7 +135,7 @@ floating_modifier $sup normal
 bindsym $sup+Shift+r reload
 
 # Exit sway (logs you out of your Wayland session)
-bindsym $sup+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit && udiskie-umount'
+bindsym $sup+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'udiskie-umount -a; swaymsg exit'
 # bindsym $sup+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
 
 
