@@ -81,9 +81,9 @@ exec $scripts_dir/mount-disks.sh mount
 exec $scripts_dir/volume.sh fullmute
 
 # volume and brightness buttons
-bindsym $sup+XF86AudioMute exec "$scripts_dir/volume.sh toggle"
-bindsym $sup+XF86AudioLowerVolume exec "$scripts_dir/volume.sh dec"
-bindsym $sup+XF86AudioRaiseVolume exec "$scripts_dir/volume.sh inc"
+bindsym $sup+Shift+m exec "$scripts_dir/volume.sh toggle"
+bindsym $sup+Shift+b exec "$scripts_dir/volume.sh dec"
+bindsym $sup+Shift+n exec "$scripts_dir/volume.sh inc"
 
 bindsym $sup+XF86MonBrightnessUp exec "$scripts_dir/brightness.sh inc"
 bindsym $sup+XF86MonBrightnessDown exec "$scripts_dir/brightness.sh dec"
