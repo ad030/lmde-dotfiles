@@ -1,5 +1,4 @@
 -- nvim-mini auto completion
-
 return {
 	"nvim-mini/mini.completion",
 	dependencies = {
@@ -7,14 +6,5 @@ return {
 		"nvim-mini/mini.snippets",
 	},
 	version = "*",
-	opts = {
-		-- window = {
-		-- 	info = {
-		-- 		border = { "┌", "─", "┐", "│", "┘", "─", "└", "│" },
-		-- 	},
-		-- 	signature = {
-		-- 		border = { "┌", "─", "┐", "│", "┘", "─", "└", "│" },
-		-- 	},
-		-- },
-	},
+	opts = {},
 }
