@@ -30,8 +30,8 @@ set $term foot
 
 # directories to be used in sway config
 set $dotfiles_dir ~/lmde-dotfiles
-set $wallpaper_dir $dotfiles_dir/wallpapers
-set $scripts_dir $dotfiles_dir/scripts
+set $wallpaper_dir $dotfiles_dir/.wallpapers
+set $scripts_dir $dotfiles_dir/.scripts
 set $screenshots_dir ~/Pictures/Screenshots
 
 

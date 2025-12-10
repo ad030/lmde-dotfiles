@@ -34,5 +34,5 @@ alias ......="cd ../../../../.."
 alias computerinfo="inxi -Fxzd"
 
 # alias for updating repos and flatpak software
-alias sysupdate="$HOME/lmde-dotfiles/scripts/system-update.sh"
+alias sysupdate="$HOME/lmde-dotfiles/.scripts/system-update.sh"
 

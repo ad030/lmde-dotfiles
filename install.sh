@@ -5,6 +5,9 @@
 dotfiles_path="$HOME/lmde-dotfiles"
 config_path="$HOME/.config"
 
+config_directories=(*/)
+
+
 if [ ! -d $dotfiles_path ]; then
 	echo "dotfiles not located in expected location!";
 	echo "no directory $dotfiles_path found!";
@@ -14,13 +17,12 @@ fi
 create_backup() {
 	# ignore symlinks
 	if [[ -L $1 ]]; then
-		echo "symlink $1 already exists"
 		return 1;
 	fi
 
 	# if file exists, move to backup
 	if [[ -d $1 || -f $1 ]]; then
-		cp $1 "$1.bak";
+		mv $1 "$1.bak";
 	fi
 
 	return 0
@@ -51,9 +53,11 @@ create_symlink "$dotfiles_path/bashrc" "$HOME/.bashrc"
 create_symlink "$dotfiles_path/bash_aliases" "$HOME/.bash_aliases"
 create_symlink "$dotfiles_path/bash_profile" "$HOME/.bash_profile"
 
-create_symlink "$dotfiles_path/foot" "$config_path/foot"
-create_symlink "$dotfiles_path/sway" "$config_path/sway"
-create_symlink "$dotfiles_path/rofi" "$config_path/rofi"
-create_symlink "$dotfiles_path/waybar" "$config_path/waybar"
-create_symlink "$dotfiles_path/nvim" "$config_path/nvim"
+for item in "${config_directories[@]}"; do 
+	item="${item%/}"
+	# echo $item
+	# echo "$dotfiles_path/$item" 
+	# echo "$config_path/$item"
+	create_symlink "$dotfiles_path/$item" "$config_path/$item"
+done
 
