@@ -15,23 +15,22 @@ set $mod Mod1
 set $sup Mod4
 
 # location of scripts to use
-set $dotfiles_dir ~/lmde-dotfiles
-set $wallpapers_dir $dotfiles_dir/.wallpapers
-set $scripts_dir $dotfiles_dir/.scripts
+set $dotfiles_dir ~/lmde-dotfiles/
 set $screenshots_dir ~/Pictures/Screenshots
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
 
 # mute on startup
-exec_always --no-startup-id "$scripts_dir/volume.sh fullmute"
+# exec_always --no-startup-id $dotfiles_dir/.scripts/volume.sh set 20%
 
 
 font pango:JetBrains Mono NL Medium 16
 # font pango:zpix 16
 
 # set wallpaper
-exec_always feh --bg-fill $wallpapers_dir/archaeologist_edition.png
+exec "if [ ! $(which feh) ];  then notify-send -u normal -t 5000 'Warning: feh not installed!' 'Background will not be set'; fi"
+exec_always feh --bg-fill $dotfiles_dir/.wallpapers/archaeologist_edition.png
 
 # enable transparency with picom compositor
 exec_always picom 
@@ -69,25 +68,26 @@ exec --no-startup-id nm-applet
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
-bindsym $sup+Shift+m exec --no-startup-id $scripts_dir/volume.sh toggle
-bindsym $sup+Shift+b exec --no-startup-id $scripts_dir/volume.sh dec
-bindsym $sup+Shift+n exec --no-startup-id $scripts_dir/volume.sh inc
+bindsym $sup+Shift+m exec --no-startup-id $dotfiles_dir/.scripts/volume.sh toggle
+bindsym $sup+Shift+b exec --no-startup-id $dotfiles_dir/.scripts/volume.sh dec
+bindsym $sup+Shift+n exec --no-startup-id $dotfiles_dir/.scripts/volume.sh inc
 
 # use brightnessctl to adjust screen brightness
-bindsym $sup+Shift+z exec --no-startup-id $scripts_dir/brightness.sh dec
-bindsym $sup+Shift+x exec --no-startup-id $scripts_dir/brightness.sh inc
+bindsym $sup+Shift+z exec --no-startup-id $dotfiles_dir/.scripts/brightness.sh dec
+bindsym $sup+Shift+x exec --no-startup-id $dotfiles_dir/.scripts/brightness.sh inc
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $sup
 
-bindsym $sup+Shift+s exec --no-startup-id "gnome-screenshot --interactive"
+set $screenshot_name $(date +%Y-%m-%dT%H%M%S).png
+bindsym --release $sup+Shift+s exec --no-startup-id gnome-screenshot -a -c -f $screenshots_dir/$screenshot_name
 
 # move tiling windows via drag & drop by left-clicking into the title bar,
 # or left-clicking anywhere into the window while holding the floating modifier.
 tiling_drag modifier titlebar
 
 # mount removable drives
-exec --no-startup-id $scripts_dir/mount-disks.sh mount
+exec_always --no-startup-id $dotfiles_dir/.scripts/mount-disks.sh mount
 
 # start a terminal
 bindsym $sup+Return exec --no-startup-id alacritty || i3-sensible-terminal
@@ -98,7 +98,7 @@ bindsym $sup+Shift+q kill
 # start dmenu (a program launcher)
 # bindsym $mod+d exec --no-startup-id dmenu_run
 # A more modern dmenu replacement is rofi:
-bindsym $sup+d exec --no-startup-id "rofi -modi drun,run -show drun"
+bindsym $sup+d exec --no-startup-id "rofi -modi window,drun,run -show drun"
 # There also is i3-dmenu-desktop which only displays applications shipping a
 # .desktop file. It is a wrapper around dmenu, so you need that installed.
 # bindcode $mod+40 exec --no-startup-id i3-dmenu-desktop

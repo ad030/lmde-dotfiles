@@ -15,7 +15,7 @@ fi
 action="$1"
 
 function usage_error {
-	echo "Usage: $(basename $0) inc|dec|mute|unmute|toggle|fullmute"
+	echo "Usage: $(basename $0) inc|dec|mute|unmute|toggle|fullmute|set"
 	exit 1
 }
 
@@ -56,6 +56,11 @@ function is_number {
 	echo "$value" | grep -Poq '^[0-9]+(?:\.[0-9]+|)$' && true || false
 }
 
+function set_volume {
+	pactl set-sink-volume $default_sink $1%
+
+}
+
 case "$action" in 
 	mute)
 		mute_volume 1
@@ -74,6 +79,9 @@ case "$action" in
 		;;
 	fullmute)
 		startup_mute
+		;;
+	set)
+		set_volume $2
 		;;
 	*)
 		usage_error
