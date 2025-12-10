@@ -7,21 +7,21 @@ themes=("ls --hide='launch.sh' $dir")
 launch_bar() {
         polybar-msg cmd quit;
 
-        polybar -c "$dir/configs/$style.ini"
+        polybar -c "$dir/bars/$style.ini"
 }
 
-if [[ "$1" == "--catppuccin" ]] then
-        style="catppuccin"
+if [[ "$1" == "--catppuccin-macchiato" ]] then
+        style="catppuccin-macchiato"
         launch_bar
 
-elif [[ "$1" == "--tokyonight" ]] then
-        style="tokyonight"
+elif [[ "$1" == "--tokyonight-storm" ]] then
+        style="tokyonight-storm"
         launch_bar
-elif [[ "$1" == "--gruvbox" ]] then
-        style="gruvbox"
+elif [[ "$1" == "--gruvbox-dark" ]] then
+        style="gruvbox-dark"
         launch_bar
 else
-        style="catpuccin"
+        style="catppuccin-macchiato"
         launch_bar
 fi
 

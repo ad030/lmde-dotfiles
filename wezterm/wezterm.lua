@@ -17,7 +17,7 @@ local color_schemes = {
 }
 
 -- set the color scheme
-config.color_scheme = color_schemes[1]
+config.color_scheme = color_schemes[2]
 
 -- disable tab bar
 config.enable_tab_bar = false

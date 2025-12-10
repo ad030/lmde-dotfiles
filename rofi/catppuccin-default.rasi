@@ -1,4 +1,4 @@
-@import "catppuccin-mocha"
+@import "/home/ad030/lmde-dotfiles/.themes/catppuccin-macchiato/rofi"
 
 * {
   selected-active-foreground:  @background;

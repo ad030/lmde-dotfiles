@@ -1,0 +1,15 @@
+[general]
+import = [
+	"catppuccin-macchiato.toml",
+]
+
+[window]
+opacity = 0.6
+blur = true
+
+[font]
+normal = { family = "JetBrains Mono", style = "Regular" }
+size = 14.0
+
+[cursor]
+style = {shape = "Block", blinking = "Always"}

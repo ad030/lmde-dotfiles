@@ -15,22 +15,23 @@ set $mod Mod1
 set $sup Mod4
 
 # location of scripts to use
-set $scripts ~/.config/i3/scripts/
+set $dotfiles_dir ~/lmde-dotfiles
+set $wallpapers_dir $dotfiles_dir/.wallpapers
+set $scripts_dir $dotfiles_dir/.scripts
+set $screenshots_dir ~/Pictures/Screenshots
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
 
 # mute on startup
-exec_always --no-startup-id "$scripts/volume.sh fullmute"
+exec_always --no-startup-id "$scripts_dir/volume.sh fullmute"
 
 
 font pango:JetBrains Mono NL Medium 16
 # font pango:zpix 16
 
 # set wallpaper
-
-set $wallpaper ~/wallpapers/archaeologist_edition.png
-exec_always feh --bg-fill $wallpaper
+exec_always feh --bg-fill $wallpapers_dir/archaeologist_edition.png
 
 # enable transparency with picom compositor
 exec_always picom 
@@ -42,7 +43,7 @@ set $locker i3lock-fancy -p
 exec "xautolock -detectsleep -time 8 -locker \"$locker\" -notify 30"
 
 # lock screen keybind
-bindsym $sup+Shift+p exec $locker
+# bindsym $sup+Shift+p exec $locker
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
@@ -52,8 +53,8 @@ bindsym $sup+Shift+p exec $locker
 # https://wiki.archlinux.org/index.php/XDG_Autostart
 exec --no-startup-id dex --autostart --environment i3
 
-exec_always --no-startup-id "xrandr --output eDP-1 --primary"
-exec_always --no-startup-id "xrandr --output HDMI-1 --mode 1920x1080"
+# exec_always --no-startup-id "xrandr --output eDP-1 --primary"
+# exec_always --no-startup-id "xrandr --output HDMI-1 --mode 1920x1080"
 
 # The combination of xss-lock, nm-applet and pactl is a popular choice, so
 # they are included here as an example. Modify as you see fit.
@@ -68,26 +69,28 @@ exec --no-startup-id nm-applet
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
-bindsym $sup+Shift+b exec --no-startup-id "$scripts/volume.sh dec"
-bindsym $sup+Shift+n exec --no-startup-id "$scripts/volume.sh inc"
-bindsym $sup+Shift+m exec --no-startup-id "$scripts/volume.sh toggle"
-bindsym $sup+XF86AudioMicMute exec --no-startup-id "$scripts/mic_mute.sh"
+bindsym $sup+Shift+m exec --no-startup-id $scripts_dir/volume.sh toggle
+bindsym $sup+Shift+b exec --no-startup-id $scripts_dir/volume.sh dec
+bindsym $sup+Shift+n exec --no-startup-id $scripts_dir/volume.sh inc
 
 # use brightnessctl to adjust screen brightness
-bindsym $sup+Shift+z exec --no-startup-id "$scripts/brightness.sh dec"
-bindsym $sup+Shift+x exec --no-startup-id "$scripts/brightness.sh inc"
+bindsym $sup+Shift+z exec --no-startup-id $scripts_dir/brightness.sh dec
+bindsym $sup+Shift+x exec --no-startup-id $scripts_dir/brightness.sh inc
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $sup
 
-bindsym $sup+p exec --no-startup-id "gnome-screenshot"
+bindsym $sup+Shift+s exec --no-startup-id "gnome-screenshot --interactive"
 
 # move tiling windows via drag & drop by left-clicking into the title bar,
 # or left-clicking anywhere into the window while holding the floating modifier.
 tiling_drag modifier titlebar
 
+# mount removable drives
+exec --no-startup-id $scripts_dir/mount-disks.sh mount
+
 # start a terminal
-bindsym $sup+Return exec --no-startup-id wezterm || i3-sensible-terminal
+bindsym $sup+Return exec --no-startup-id alacritty || i3-sensible-terminal
 
 # kill focused window
 bindsym $sup+Shift+q kill
@@ -224,7 +227,7 @@ bindsym $sup+r mode "resize"
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 
-exec_always --no-startup-id "$HOME/.config/polybar/launch.sh --catppuccin"
+exec_always --no-startup-id "$dotfiles_dir/polybar/launch.sh --catppuccin-macchiato"
 
 # bar {
 #         status_command i3status -c ~/.config/i3status/i3status.conf
@@ -271,33 +274,33 @@ workspace 8 output primary
 workspace 9 output primary
 workspace 10 output HDMI-1 primary 
 
-# catppuccin mocha theme
-set $rosewater #f5e0dc
-set $flamingo #f2cdcd
-set $pink #f5c2e7
-set $mauve #cba6f7
-set $red #f38ba8
-set $maroon #eba0ac
-set $peach #fab387
-set $yellow #f9e2af
-set $green #a6e3a1
-set $teal #94e2d5
-set $sky #89dceb
-set $sapphire #74c7ec
-set $blue #89b4fa
-set $lavender #b4befe
-set $text #cdd6f4
-set $subtext1 #bac2de
-set $subtext0 #a6adc8
-set $overlay2 #9399b2
-set $overlay1 #7f849c
-set $overlay0 #6c7086
-set $surface2 #585b70
-set $surface1 #45475a
-set $surface0 #313244
-set $base #1e1e2e
-set $mantle #181825
-set $crust #11111b
+# catppuccin macchiato theme
+set $rosewater #f4dbd6
+set $flamingo #f0c6c6
+set $pink #f5bde6
+set $mauve #c6a0f6
+set $red #ed8796
+set $maroon #ee99a0
+set $peach #f5a97f
+set $yellow #eed49f
+set $green #a6da95
+set $teal #8bd5ca
+set $sky #91d7e3
+set $sapphire #7dc4e4
+set $blue #8aadf4
+set $lavender #b7bdf8
+set $text #cad3f5
+set $subtext1 #b8c0e0
+set $subtext0 #a5adcb
+set $overlay2 #939ab7
+set $overlay1 #8087a2
+set $overlay0 #6e738d
+set $surface2 #5b6078
+set $surface1 #494d64
+set $surface0 #363a4f
+set $base #24273a
+set $mantle #1e2030
+set $crust #181926
 
 # target                        title           bg              text            indicator       border
 client.focused                  $sapphire       $base           $text           $sapphire       $sapphire
@@ -307,16 +310,16 @@ client.urgent                   $peach          $base           $peach          
 client.placeholder              $overlay0       $base           $text           $overlay0       $overlay0
 
 # set primary gruvbox colorscheme colors
-set $bg #282828
-set $red #cc241d
-set $green #98971a
-set $yellow #d79921
-set $blue #458588
-set $purple #b16286
-set $aqua #689d68
-set $gray #a89984
-set $darkgray #1d2021
-set $white #dedede
+# set $bg #282828
+# set $red #cc241d
+# set $green #98971a
+# set $yellow #d79921
+# set $blue #458588
+# set $purple #b16286
+# set $aqua #689d68
+# set $gray #a89984
+# set $darkgray #1d2021
+# set $white #dedede
 
 # target                        title           bg              text            indicator       border
 # client.focused                  $green          $bg             $darkgray       $purple         $darkgray
@@ -339,8 +342,6 @@ default_floating_border pixel 1
 
 title_align center
 
-
 # disable mouse focus
 focus_follows_mouse no
-
 
