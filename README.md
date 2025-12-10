@@ -8,13 +8,21 @@ My personal config on LMDE 7.
 - Neovim
 - Zathura
 - udiskie (to auto mount hard drives)
-- Wayland
+- For X11:
+  - wezterm (terminal emulator)
+  - i3 (window manager)
+  - polybar (status bar)
+  - picom (compositor)
+- For Wayland:
   - foot (terminal emulator)
   - grim (screenshot tool)
   - slurp (screen select tool)
   - sway (compositor)
   - waybar (bar)
   - wl-clipboard
+
+Linux Mint does not currently work perfectly with Wayland, likewise with NVIDIA proprietary drivers and Sway.
+My dotfiles include both my X11 and Wayland configs.
 
 ## Dependencies
 
