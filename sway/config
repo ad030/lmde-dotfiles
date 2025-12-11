@@ -26,7 +26,7 @@ exec {
 }
 # Your preferred terminal emulator
 # set $term wezterm
-set $term foot
+set $term alacritty
 
 # directories to be used in sway config
 set $dotfiles_dir ~/lmde-dotfiles
