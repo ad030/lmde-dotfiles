@@ -16,7 +16,6 @@ set $sup Mod4
 
 # location of scripts to use
 set $dotfiles_dir ~/lmde-dotfiles/
-set $screenshots_dir ~/Pictures/Screenshots
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -79,8 +78,8 @@ bindsym $sup+Shift+x exec --no-startup-id $dotfiles_dir/.scripts/brightness.sh i
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $sup
 
-set $screenshot_name $(date +%Y-%m-%dT%H%M%S).png
-bindsym --release $sup+Shift+s exec --no-startup-id gnome-screenshot -a -c -f $screenshots_dir/$screenshot_name
+# take screenshot
+bindsym --release $sup+Shift+s exec $dotfiles_dir/.scripts/screenshot.sh 
 
 # move tiling windows via drag & drop by left-clicking into the title bar,
 # or left-clicking anywhere into the window while holding the floating modifier.

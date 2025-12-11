@@ -116,13 +116,8 @@ bindsym $sup+Shift+q kill
 # Start your launcher
 bindsym $sup+d exec $menu
 
-# make Screenshots directory if does not already exist
-exec "if [ ! -d ~/Pictures/Screenshots ]; then mkdir ~/Pictures/Screenshots; fi"
 # screenshot on wayland
-# save to Screenshots directory
-
-set $screenshot_name $(date +%Y-%m-%dT%H%M%S).png
-bindsym $sup+Shift+s exec grim -g "$(slurp)" $screenshots_dir/$screenshot_name && wl-copy --paste-once < $screenshots_dir/$screenshot_name
+bindsym $sup+Shift+s exec $scripts_dir/screenshot-wayland.sh
 
 # Drag floating windows by holding down $mod and left mouse button.
 # Resize them with right mouse button + $mod.
