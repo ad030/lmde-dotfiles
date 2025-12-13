@@ -37,13 +37,13 @@ exec_always feh --bg-fill $wallpapers_dir/archaeologist_edition.png
 exec_always picom 
 
 # lock with i3lock-fancy
-set $locker i3lock-fancy -p 
+set $locker i3lock-fancy -p
 
 # lock screen after 5 minutes
-exec "xautolock -detectsleep -time 8 -locker \"$locker\" -notify 30"
+# exec "xautolock -detectsleep -time 8 -locker \"$locker\" -notify 30"
 
 # lock screen keybind
-# bindsym $sup+Shift+p exec $locker
+bindsym $sup+Shift+p exec $locker
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
