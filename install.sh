@@ -2,15 +2,15 @@
 # /home/user/lmde-dotfiles or ~/lmde-dotfiles or $HOME/lmde-dotfiles
 # script does not work otherwise
 
-dotfiles_path="$HOME/lmde-dotfiles"
-config_path="$HOME/.config"
+DOTFILES_PATH="$HOME/lmde-dotfiles"
+XDG_CONFIG_HOME="$HOME/.config"
 
 config_directories=(*/)
 
 
-if [ ! -d $dotfiles_path ]; then
+if [ ! -d $DOTFILES_PATH ]; then
 	echo "dotfiles not located in expected location!";
-	echo "no directory $dotfiles_path found!";
+	echo "no directory $DOTFILES_PATH found!";
 	exit 1;
 fi
 
@@ -49,15 +49,15 @@ create_symlink() {
 	fi
 }
 
-create_symlink "$dotfiles_path/bashrc" "$HOME/.bashrc"
-create_symlink "$dotfiles_path/bash_aliases" "$HOME/.bash_aliases"
-create_symlink "$dotfiles_path/bash_profile" "$HOME/.bash_profile"
+create_symlink "$DOTFILES_PATH/bashrc" "$HOME/.bashrc"
+create_symlink "$DOTFILES_PATH/bash_aliases" "$HOME/.bash_aliases"
+create_symlink "$DOTFILES_PATH/bash_profile" "$HOME/.bash_profile"
 
 for item in "${config_directories[@]}"; do 
 	item="${item%/}"
 	# echo $item
-	# echo "$dotfiles_path/$item" 
-	# echo "$config_path/$item"
-	create_symlink "$dotfiles_path/$item" "$config_path/$item"
+	# echo "$DOTFILES_PATH/$item" 
+	# echo "$XDG_CONFIG_HOME/$item"
+	create_symlink "$DOTFILES_PATH/$item" "$XDG_CONFIG_HOME/$item"
 done
 
