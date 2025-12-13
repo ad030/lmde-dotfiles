@@ -1,4 +1,4 @@
-# Neovim
+# Neovim Dependencies
 
 Required packages for some plugins to work:
 

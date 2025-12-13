@@ -8,10 +8,10 @@ return {
 		},
 		config = function()
 			require("catppuccin").setup({
-				flavour = "mocha",
+				flavour = "macchiato",
 				transparent_background = true,
 			})
-			vim.cmd.colorscheme([[catppuccin-mocha]])
+			vim.cmd.colorscheme([[catppuccin-macchiato]])
 		end,
 	},
 	{

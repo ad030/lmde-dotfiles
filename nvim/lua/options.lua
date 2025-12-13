@@ -1,97 +1,104 @@
 -- variables for vim classes
-local opt = vim.opt
+local o = vim.opt
+local g = vim.g
 
--- [[ Setting options ]]
--- See `:help vim.o`
--- NOTE: You can change these options as you wish!
---  For more options, you can see `:help option-list`
+-- Set comma as the leader key
+g.mapleader = ","
+g.maplocalleader = ","
+
+-- no nerd font
+g.have_nerd_font = true
 
 -- Make line numbers default
-opt.number = true
+o.number = true
 
 -- You can also add relative line numbers, for help with jumping.
 --  Experiment for yourself to see if you like it!
-opt.relativenumber = true
+o.relativenumber = true
 
 -- Enable mouse mode, can be useful for resizing splits for example!
-opt.mouse = "a"
+o.mouse = "a"
 
 -- Don't show the mode, since it's already in status line
-opt.showmode = false
+o.showmode = false
 
 -- Sync clipboard between OS and Neovim.
---  Remove this option if you want your OS clipboard to remain independent.
+--  Remove this oion if you want your OS clipboard to remain independent.
 --  See `:help 'clipboard'`
-opt.clipboard = "unnamedplus"
+o.clipboard = "unnamedplus"
 
 -- Enable break indent
-opt.breakindent = true
+o.breakindent = true
 
 -- Save undo history
-opt.undofile = true
+o.undofile = true
 
 -- Case-insensitive searching UNLESS \C or capital in search
-opt.ignorecase = true
-opt.smartcase = true
+o.ignorecase = true
+o.smartcase = true
 
 -- Keep signcolumn on by default
-opt.signcolumn = "yes"
+o.signcolumn = "yes"
 
 -- Decrease update time
-opt.updatetime = 250
+o.updatetime = 250
 
 -- Decrease mapped sequence wait time
 -- Displays which-key popup sooner
-opt.timeoutlen = 300
+o.timeoutlen = 300
 
 -- Configure how new splits should be opened
-opt.splitright = true
-opt.splitbelow = true
+o.splitright = true
+o.splitbelow = true
 
 -- Sets how neovim will display certain whitespace in the editor.
 --  See `:help 'list'`
 --  and `:help 'listchars'`
-opt.list = true
-opt.listchars = {
+o.list = true
+o.listchars = {
 	tab = "» ",
 	trail = "·",
 	nbsp = "␣",
 }
 
 -- Preview substitutions live, as you type!
-opt.inccommand = "split"
+o.inccommand = "split"
 
 -- Show which line your cursor is on
-opt.cursorline = true
+o.cursorline = true
 
 -- Minimal number of screen lines to keep above and below the cursor.
-opt.scrolloff = 4
+o.scrolloff = 4
 
 -- 80 column border for good coding style
-opt.cc = "80"
+o.cc = "80"
 
 -- set fast scrolling
-opt.ttyfast = true
+o.ttyfast = true
 
 -- bash-like tab completion
-opt.wildmode = "longest:list"
+o.wildmode = "longest:list"
 
 -- autoindent in c style
-opt.cindent = true
+o.cindent = true
 
 -- tabs are 8 spaces long
-opt.tabstop = 8
-opt.softtabstop = 8
+o.tabstop = 8
+o.softtabstop = 8
 -- indents are 8 spaces long
-opt.shiftwidth = 8
+o.shiftwidth = 8
 
 -- replace tabs with equivalent amount of spaces
-opt.expandtab = true
+o.expandtab = true
 
 -- conceallevel
-opt.conceallevel = 1
+o.conceallevel = 1
 
 -- use terminal colors
-opt.termguicolors = true
+o.termguicolors = true
 
-opt.wrap = true
+o.wrap = true
+
+-- folding
+o.foldmethod = "expr"
+o.foldexpr = "nvim_treesitter#foldexpr()"

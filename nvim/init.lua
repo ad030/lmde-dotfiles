@@ -1,10 +1,14 @@
-require("global")
-
 require("options")
 
 require("keymaps")
 
-require("lazy-setup")
+require("colorscheme")
+
+-- lazy plugin manager
+-- require("lazy-setup")
+
+-- built in plugin manager
+require("plugins")
 
 require("autocommands")
 
