@@ -34,7 +34,7 @@ exec "if [ ! $(which feh) ];  then notify-send -u normal -t 5000 'Warning: feh n
 exec_always feh --bg-fill $wallpapers_dir/archaeologist_edition.png
 
 # enable transparency with picom compositor
-exec_always picom 
+exec_always picom --backend glx
 
 # lock with i3lock-fancy
 set $locker i3lock-fancy -p
