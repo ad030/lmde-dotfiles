@@ -86,8 +86,6 @@ require("todo-comments").setup()
 
 -- autoformatter
 do
-	local tools = require("tools")
-
 	require("conform").setup({
 		notify_on_error = false,
 		format_on_save = {
