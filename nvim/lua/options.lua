@@ -92,7 +92,7 @@ o.shiftwidth = 8
 o.expandtab = true
 
 -- conceallevel
-o.conceallevel = 1
+o.conceallevel = 0
 
 -- use terminal colors
 o.termguicolors = true
@@ -100,5 +100,5 @@ o.termguicolors = true
 o.wrap = true
 
 -- folding
-o.foldmethod = "expr"
+o.foldmethod = "manual"
 o.foldexpr = "nvim_treesitter#foldexpr()"

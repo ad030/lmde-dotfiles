@@ -36,7 +36,4 @@ else
     start_agent 
 fi 
 
-# use ascii name sorting in nemo file manager
-export LC_COLLATE=C
-
 if [ -e /home/ad030/.nix-profile/etc/profile.d/nix.sh ]; then . /home/ad030/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
