@@ -22,7 +22,7 @@ set $wallpapers_dir ~/lmde-dotfiles/.wallpapers/
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
 
-# mute on startup
+# set volume on startup
 exec_always --no-startup-id $scripts_dir/volume.sh set 20%
 
 
