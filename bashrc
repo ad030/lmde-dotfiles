@@ -124,10 +124,19 @@ fi
 
 
 # add local binaries to path
-export PATH="$PATH:$HOME/.local/bin/"
+if [ -d "$HOME/.local/bin" ] ; then
+        PATH="$HOME/.local/bin:$PATH"
+fi
+
+# add cargo package manager binaries to path
+if [ -d "$HOME/.cargo/bin" ] ; then
+        PATH="$HOME/.cargo/bin:$PATH"
+fi
 
 # add JetBrains IntelliJ IDEA install to path
-export PATH="$PATH:$HOME/.intellij-idea/bin/"
+if [ -d "$HOME/.intellij-idea/bin/" ] ; then
+        PATH="$PATH:$HOME/.intellij-idea/bin/"
+fi
 
 # use vim as default editor 
 export EDITOR="/usr/bin/vim"
