@@ -18,6 +18,11 @@ vim.pack.add({
 	"https://github.com/nvim-mini/mini.statusline",
 	"https://github.com/nvim-mini/mini.surround",
 	"https://github.com/nvim-telescope/telescope.nvim",
+	{
+		src = "https://github.com/nvim-treesitter/nvim-treesitter",
+		version = "main",
+	},
+	"https://github.com/MeanderingProgrammer/render-markdown.nvim",
 	"https://github.com/stevearc/conform.nvim",
 	"https://github.com/stevearc/oil.nvim",
 	"https://github.com/WhoIsSethDaniel/mason-tool-installer",
@@ -254,4 +259,16 @@ do
 	vim.keymap.set("n", "<F7>", function()
 		require("dap").step_out()
 	end, { desc = "Debug Step Out/Return" })
+end
+
+-- treesitter
+do
+	require("nvim-treesitter").setup()
+end
+
+-- render-markdown.nvim
+do
+	require("nvim-treesitter").setup()
+	require("mini.icons").setup()
+	require("render-markdown").setup({})
 end
