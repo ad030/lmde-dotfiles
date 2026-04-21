@@ -8,8 +8,8 @@ local config = wezterm.config_builder()
 
 -- list of color schemes i like
 local color_schemes = {
-	"Catppuccin Mocha",
 	"Catppuccin Macchiato",
+	"Catppuccin Mocha",
 	"Catppuccin Frappe",
 	"Catppuccin Latte",
 	"Gruvbox Material (Gogh)",
@@ -23,8 +23,8 @@ config.color_scheme = color_schemes[2]
 config.enable_tab_bar = false
 
 -- set terminal background opacity
--- config.window_background_opacity = 0.50
-config.window_background_opacity = 0.55
+-- config.window_background_opacity = 0.55
+config.window_background_opacity = 0.90
 
 -- fonts stored in fonts directory
 config.font_dirs = {
@@ -34,8 +34,8 @@ config.font_dirs = {
 
 -- configure font
 config.font = wezterm.font_with_fallback({
-	-- "Meslo LGM Nerd Font Mono",
-	"JetBrains Mono",
+	"Meslo LGM Nerd Font Mono",
+	-- "JetBrains Mono",
 })
 config.font_size = 14
 config.harfbuzz_features = { "calt=0", "clig=0", "liga=0" }
