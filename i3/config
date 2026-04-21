@@ -23,7 +23,7 @@ set $wallpapers_dir ~/lmde-dotfiles/.wallpapers/
 # is used in the bar {} block below.
 
 # set volume on startup
-exec_always --no-startup-id $scripts_dir/volume.sh set 20%
+exec_always --no-startup-id $scripts_dir/volume.sh set "50%"
 
 
 font pango:JetBrains Mono NL Medium 16
@@ -91,7 +91,9 @@ tiling_drag modifier titlebar
 exec_always --no-startup-id $scripts_dir/mount-disks.sh mount
 
 # start a terminal
-bindsym $sup+Return exec --no-startup-id alacritty || i3-sensible-terminal
+# bindsym $sup+Return exec --no-startup-id i3-sensible-terminal
+# bindsym $sup+Return exec --no-startup-id alacritty 
+bindsym $sup+Return exec --no-startup-id wezterm 
 
 # kill focused window
 bindsym $sup+Shift+q kill
