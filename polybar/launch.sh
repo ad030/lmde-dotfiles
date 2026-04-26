@@ -14,14 +14,14 @@ if [[ "$1" == "--catppuccin-macchiato" ]] then
         style="catppuccin-macchiato"
         launch_bar
 
-elif [[ "$1" == "--tokyonight-storm" ]] then
-        style="tokyonight-storm"
-        launch_bar
+# elif [[ "$1" == "--tokyonight-storm" ]] then
+#         style="tokyonight-storm"
+#         launch_bar
 elif [[ "$1" == "--gruvbox-dark" ]] then
         style="gruvbox-dark"
         launch_bar
 else
-        style="catppuccin-macchiato"
+        style="gruvbox-dark"
         launch_bar
 fi
 
