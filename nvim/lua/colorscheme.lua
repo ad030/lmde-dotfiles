@@ -1,19 +1,28 @@
 vim.pack.add({
-        {src="https://github.com/catppuccin/nvim"},
-        {src="https://github.com/rebelot/kanagawa.nvim"},
-        {src="https://github.com/folke/tokyonight.nvim"},
-        {src="https://github.com//sainnhe/gruvbox-material"},
+	{ src = "https://github.com/catppuccin/nvim" },
+	{ src = "https://github.com/rebelot/kanagawa.nvim" },
+	{ src = "https://github.com/folke/tokyonight.nvim" },
+	{ src = "https://github.com//sainnhe/gruvbox-material" },
 })
 
-require("catppuccin").setup({
-        flavour = "macchiato",
-        transparent_background = true,
-})
+do
+	require("catppuccin").setup({
+		flavour = "macchiato",
+		transparent_background = true,
+	})
+	-- vim.cmd.colorscheme("catppuccin")
+end
 
-require("tokyonight").setup({
-        style = "night",
-        transparent = true,
-})
+do
+	require("tokyonight").setup({
+		style = "night",
+		transparent = true,
+	})
+	-- vim.cmd.colorscheme("tokyonight")
+end
 
-vim.cmd.colorscheme("catppuccin")
--- vim.cmd.colorscheme("tokyonight")
+do
+	vim.g.gruvbox_material_enable_italic = true
+	vim.g.gruvbox_material_transparent_background = true
+	vim.cmd.colorscheme("gruvbox-material")
+end

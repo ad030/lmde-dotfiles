@@ -230,7 +230,8 @@ bindsym $sup+r mode "resize"
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 
-exec_always --no-startup-id "$dotfiles_dir/polybar/launch.sh --catppuccin-macchiato"
+# exec_always --no-startup-id "$dotfiles_dir/polybar/launch.sh --catppuccin-macchiato"
+exec_always --no-startup-id "$dotfiles_dir/polybar/launch.sh --gruvbox-dark"
 
 # bar {
 #         status_command i3status -c ~/.config/i3status/i3status.conf
@@ -277,59 +278,82 @@ workspace 8 output primary
 workspace 9 output primary
 workspace 10 output HDMI-1 primary 
 
-# catppuccin macchiato theme
-set $rosewater #f4dbd6
-set $flamingo #f0c6c6
-set $pink #f5bde6
-set $mauve #c6a0f6
-set $red #ed8796
-set $maroon #ee99a0
-set $peach #f5a97f
-set $yellow #eed49f
-set $green #a6da95
-set $teal #8bd5ca
-set $sky #91d7e3
-set $sapphire #7dc4e4
-set $blue #8aadf4
-set $lavender #b7bdf8
-set $text #cad3f5
-set $subtext1 #b8c0e0
-set $subtext0 #a5adcb
-set $overlay2 #939ab7
-set $overlay1 #8087a2
-set $overlay0 #6e738d
-set $surface2 #5b6078
-set $surface1 #494d64
-set $surface0 #363a4f
-set $base #24273a
-set $mantle #1e2030
-set $crust #181926
-
-# target                        title           bg              text            indicator       border
-client.focused                  $sapphire       $base           $text           $sapphire       $sapphire
-client.focused_inactive         $text           $base           $text           $base           $base
-client.unfocused                $overlay0       $base           $text           $base           $base
-client.urgent                   $peach          $base           $peach          $overlay0       $peach
-client.placeholder              $overlay0       $base           $text           $overlay0       $overlay0
+# # catppuccin macchiato theme
+# set $rosewater #f4dbd6
+# set $flamingo #f0c6c6
+# set $pink #f5bde6
+# set $mauve #c6a0f6
+# set $red #ed8796
+# set $maroon #ee99a0
+# set $peach #f5a97f
+# set $yellow #eed49f
+# set $green #a6da95
+# set $teal #8bd5ca
+# set $sky #91d7e3
+# set $sapphire #7dc4e4
+# set $blue #8aadf4
+# set $lavender #b7bdf8
+# set $text #cad3f5
+# set $subtext1 #b8c0e0
+# set $subtext0 #a5adcb
+# set $overlay2 #939ab7
+# set $overlay1 #8087a2
+# set $overlay0 #6e738d
+# set $surface2 #5b6078
+# set $surface1 #494d64
+# set $surface0 #363a4f
+# set $base #24273a
+# set $mantle #1e2030
+# set $crust #181926
+#
+# # target                        title           bg              text            indicator       border
+# client.focused                  $sapphire       $base           $text           $sapphire       $sapphire
+# client.focused_inactive         $text           $base           $text           $base           $base
+# client.unfocused                $overlay0       $base           $text           $base           $base
+# client.urgent                   $peach          $base           $peach          $overlay0       $peach
+# client.placeholder              $overlay0       $base           $text           $overlay0       $overlay0
 
 # set primary gruvbox colorscheme colors
-# set $bg #282828
-# set $red #cc241d
-# set $green #98971a
-# set $yellow #d79921
-# set $blue #458588
-# set $purple #b16286
-# set $aqua #689d68
-# set $gray #a89984
-# set $darkgray #1d2021
-# set $white #dedede
+set $bg_dim #141617
+set $bg0 #1d2021
+set $bg1 #282828
+set $bg2 #282828
+set $bg3 #3c3836
+set $bg4 #3c3836
+set $bg5 #504945
+set $bg_statusline1 #282828
+set $bg_statusline2 #32302f
+set $bg_statusline3 #504945
+set $bg_diff_green #32361a
+set $bg_visual_green #333e34
+set $bg_diff_red #3c1f1e
+set $bg_visual_red #442e2d
+set $bg_diff_blue #0d3138
+set $bg_visual_blue #2e3b3b
+set $bg_visual_yellow #473c29
+set $bg_current_word #32302f
+set $fg0 #d4be98
+set $fg1 #ddc7a1
+set $red #ea6962
+set $orange #e78a4e
+set $yellow #d8a657
+set $green #a9b665
+set $aqua #89b482
+set $blue #7daea3
+set $purple #d3869b
+set $bg_red #ea6962
+set $bg_green #a9b665
+set $bg_yellow #d8a657
+set $grey0 #7c6f64
+set $grey1 #928374
+set $grey2 #a89984
 
 # target                        title           bg              text            indicator       border
-# client.focused                  $green          $bg             $darkgray       $purple         $darkgray
-# client.focused_inactive         $green          $darkgray       $yellow         $purple         $darkgray
-# client.unfocused                $gray           $darkgray       $yellow         $purple         $darkgray
-# client.urgent                   $red            $red            $white          $red            $red
-# client.placeholder              $bg             $bg             $darkgray       $darkgray       $darkgray
+client.focused                  $bg_yellow      $bg0            $fg0            $purple         $bg_yellow
+client.focused_inactive         $fg1            $bg0            $fg0            $purple         $grey1
+client.unfocused                $fg1            $bg0            $fg0            $purple         $grey1
+client.urgent                   $red            $red            $fg0            $red            $red
+client.placeholder              $bg0            $bg0            $fg0            $grey1          $grey1
 
 # gaps between windows
 gaps inner 8px

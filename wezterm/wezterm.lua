@@ -17,14 +17,14 @@ local color_schemes = {
 }
 
 -- set the color scheme
-config.color_scheme = color_schemes[2]
+config.color_scheme = color_schemes[5]
 
 -- disable tab bar
 config.enable_tab_bar = false
 
 -- set terminal background opacity
 -- config.window_background_opacity = 0.55
-config.window_background_opacity = 0.90
+config.window_background_opacity = 0.80
 
 -- fonts stored in fonts directory
 config.font_dirs = {
