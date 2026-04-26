@@ -13,11 +13,13 @@ local color_schemes = {
 	"Catppuccin Frappe",
 	"Catppuccin Latte",
 	"Gruvbox Material (Gogh)",
+	"GruvboxDark",
+	"Gruvbox dark, medium (base16)",
 	"Tokyo Night Storm",
 }
 
 -- set the color scheme
-config.color_scheme = color_schemes[5]
+config.color_scheme = color_schemes[6]
 
 -- disable tab bar
 config.enable_tab_bar = false

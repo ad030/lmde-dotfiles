@@ -313,7 +313,7 @@ workspace 10 output HDMI-1 primary
 # client.urgent                   $peach          $base           $peach          $overlay0       $peach
 # client.placeholder              $overlay0       $base           $text           $overlay0       $overlay0
 
-# set primary gruvbox colorscheme colors
+## gruvbox material dark hard 
 set $bg_dim #141617
 set $bg0 #1d2021
 set $bg1 #282828
@@ -321,26 +321,27 @@ set $bg2 #282828
 set $bg3 #3c3836
 set $bg4 #3c3836
 set $bg5 #504945
+set $bg_diff_red #3c1f1e
+set $bg_diff_green #32361a
+set $bg_diff_blue #0d3138
 set $bg_statusline1 #282828
 set $bg_statusline2 #32302f
 set $bg_statusline3 #504945
-set $bg_diff_green #32361a
-set $bg_visual_green #333e34
-set $bg_diff_red #3c1f1e
+set $bg_current_word #32302f
 set $bg_visual_red #442e2d
-set $bg_diff_blue #0d3138
+set $bg_visual_green #333e34
 set $bg_visual_blue #2e3b3b
 set $bg_visual_yellow #473c29
-set $bg_current_word #32302f
+set $bg_visual_purple #000000 #TODO: add actual gruvbox dark color here
 set $fg0 #d4be98
 set $fg1 #ddc7a1
 set $red #ea6962
-set $orange #e78a4e
-set $yellow #d8a657
 set $green #a9b665
-set $aqua #89b482
 set $blue #7daea3
+set $yellow #d8a657
 set $purple #d3869b
+set $orange #e78a4e
+set $aqua #89b482
 set $bg_red #ea6962
 set $bg_green #a9b665
 set $bg_yellow #d8a657
@@ -348,10 +349,84 @@ set $grey0 #7c6f64
 set $grey1 #928374
 set $grey2 #a89984
 
+# include "$HOME/lmde-dotfiles/themes/i3/gruvbox_dark.conf"
+
+## gruvbox material dark soft
+# set $bg_dim #252423
+# set $bg0 #32302f
+# set $bg1 #3c3836
+# set $bg2 #3c3836
+# set $bg3 #504945
+# set $bg4 #504945
+# set $bg5 #665c54
+# set $bg_diff_red #472322
+# set $bg_diff_green #3d4220
+# set $bg_diff_blue #0f3a42
+# set $bg_statusline1 #3c3836
+# set $bg_statusline2 #46413e
+# set $bg_statusline3 #5b534d
+# set $bg_current_word #45403d
+# set $bg_visual_red #543937
+# set $bg_visual_green #424a3e
+# set $bg_visual_blue #404946
+# set $bg_visual_yellow #574833
+# set $bg_visual_purple #4b3e45
+# set $fg0 #d4be98
+# set $fg1 #ddc7a1
+# set $red #ea6962
+# set $green #a9b665
+# set $blue #7daea3
+# set $yellow #d8a657
+# set $purple #d3869b
+# set $orange #e78a4e
+# set $aqua #89b482
+# set $bg_red #ea6962
+# set $bg_green #a9b665
+# set $bg_yellow #d8a657
+# set $grey0 #7c6f64
+# set $grey1 #928374
+# set $grey2 #a89984
+
+## original gruvbox dark
+set $bg_dim #1b1b1b
+set $bg0 #282828
+set $bg1 #32302f
+set $bg2 #32302f
+set $bg3 #45403d
+set $bg4 #45403d
+set $bg5 #5a524c
+set $bg_diff_red #402120
+set $bg_diff_green #34381b
+set $bg_diff_blue #0e363e
+set $bg_statusline1 #32302f
+set $bg_statusline2 #3a3735
+set $bg_statusline3 #504945
+set $bg_current_word #3c3836
+set $bg_visual_red #4c3432
+set $bg_visual_green #3b4439
+set $bg_visual_blue #374141
+set $bg_visual_yellow #4f422e
+set $bg_visual_purple #443840
+set $fg0 #ebdbb2
+set $fg1 #ebdbb2
+set $red #fb4934
+set $green #b8bb26
+set $blue #83a598
+set $yellow #fabd2f
+set $purple #d3869b
+set $orange #fe8019
+set $aqua #8ec07c
+set $bg_red #cc241d
+set $bg_green #b8bb26
+set $bg_yellow #fabd2f
+set $grey0 #7c6f64
+set $grey1 #928374
+set $grey2 #a89984
+
 # target                        title           bg              text            indicator       border
-client.focused                  $bg_yellow      $bg0            $fg0            $purple         $bg_yellow
-client.focused_inactive         $fg1            $bg0            $fg0            $purple         $grey1
-client.unfocused                $fg1            $bg0            $fg0            $purple         $grey1
+client.focused                  $fg0            $bg0            $fg0            $purple         $fg0
+client.focused_inactive         $bg5            $bg1            $fg0            $purple         $bg5
+client.unfocused                $bg5            $bg0            $bg5            $purple         $bg5
 client.urgent                   $red            $red            $fg0            $red            $red
 client.placeholder              $bg0            $bg0            $fg0            $grey1          $grey1
 
