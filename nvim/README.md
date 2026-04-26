@@ -1,5 +1,7 @@
 # Neovim Dependencies
 
+Plugins are configured through Neovim's built-in `vim.pack` package manager.
+
 Required packages for some plugins to work:
 
 - `ripgrep`
@@ -21,7 +23,7 @@ Required packages for some plugins to work:
 - `java-debug` (must be installed manually)
 - `vscode-java-test` (must be installed manually)
 
-## LaTeX documents:
+## TeX/LaTeX documents:
 
 - `latexmk`
 - `texlive`
