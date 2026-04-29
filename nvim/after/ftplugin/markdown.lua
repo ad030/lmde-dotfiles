@@ -53,7 +53,7 @@ obsidian.setup({
 			action = function()
 				return obsidian.util.toggle_checkbox()
 			end,
-			opts = { buffer = true },
+			opts = { buffer = true, desc = "Obsidian: Toggle [ch]eckbox" },
 		},
 		-- smart action; toggle checkbox or follow link
 		["<cr>"] = {
@@ -67,14 +67,14 @@ obsidian.setup({
 			action = function()
 				return obsidian.client.today()
 			end,
-			opts = { buffer = true, expr = true, desc = "Open [D]aily Note" },
+			opts = { buffer = true, expr = true, desc = "[O]bsidian: Open [D]aily Note" },
 		},
 		-- open new note
 		["<leader>On"] = {
 			action = function()
 				return obsidian.client.today()
 			end,
-			opts = { buffer = true, expr = true, desc = "Open [D]aily Note" },
+			opts = { buffer = true, expr = true, desc = "[O]bsidian: Open [N]ew Note" },
 		},
 	},
 
