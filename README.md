@@ -7,7 +7,6 @@ My personal config on LMDE 7.
 - Rofi
 - Neovim
 - Zathura
-- udiskie (to auto mount hard drives)
 - For X11:
   - wezterm (terminal emulator)
   - i3 (window manager)
@@ -32,4 +31,4 @@ My dotfiles include both my X11 and Wayland configs.
 
 ## Cloning
 
-I store all my config files in the directory `~/dotfiles/`, and create symlinks to `$HOME` and `$HOME/.config` to these files.
+I store all my config files in the directory `~/lmde-dotfiles/`, and create symlinks to `$HOME` and `$HOME/.config` to these files.
