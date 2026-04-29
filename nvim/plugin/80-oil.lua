@@ -1,11 +1,13 @@
 -- buffer file browser
 vim.pack.add({
-        "https://github.com/stevearc/oil.nvim",
+	"https://github.com/stevearc/oil.nvim",
 })
 
-require("oil").setup()
+local oil = require("oil")
+
+oil.setup()
 
 -- keymaps
 vim.keymap.set("n", "<leader>oo", function()
-        require("oil").open()
+	oil.open()
 end, { desc = "Open oil browser in parent directory" })
