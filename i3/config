@@ -26,7 +26,7 @@ set $wallpapers_dir ~/lmde-dotfiles/.wallpapers/
 exec_always --no-startup-id $scripts_dir/volume.sh set "50%"
 
 
-font pango:JetBrains Mono NL Medium 16
+font pango:JetBrains Mono NL Medium 14
 # font pango:zpix 16
 
 # set wallpaper
