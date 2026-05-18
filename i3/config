@@ -431,8 +431,8 @@ client.urgent                   $red            $red            $fg0            
 client.placeholder              $bg0            $bg0            $fg0            $grey1          $grey1
 
 # gaps between windows
-gaps inner 8px
-gaps outer 8px
+gaps inner 2px
+gaps outer 2px
 
 # room for status bar
 # only used if the bar is floating
