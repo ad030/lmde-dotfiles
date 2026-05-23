@@ -433,6 +433,7 @@ client.placeholder              $bg0            $bg0            $fg0            
 # gaps between windows
 gaps inner 2px
 gaps outer 2px
+smart_gaps on
 
 # room for status bar
 # only used if the bar is floating
@@ -441,8 +442,9 @@ gaps outer 2px
 # borders
 default_border normal 1
 default_floating_border pixel 1
+hide_edge_borders smart
 
-title_align center
+title_align left
 
 # disable mouse focus
 focus_follows_mouse no
