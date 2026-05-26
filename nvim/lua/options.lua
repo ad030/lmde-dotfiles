@@ -1,104 +1,100 @@
--- variables for vim classes
-local o = vim.opt
-local g = vim.g
-
 -- Set comma as the leader key
-g.mapleader = ","
-g.maplocalleader = ","
+vim.g.mapleader = ","
+vim.g.maplocalleader = ","
 
 -- no nerd font
-g.have_nerd_font = true
+vim.g.have_nerd_font = true
 
 -- Make line numbers default
-o.number = true
+vim.opt.number = true
 
 -- You can also add relative line numbers, for help with jumping.
 --  Experiment for yourself to see if you like it!
-o.relativenumber = true
+vim.opt.relativenumber = true
 
 -- Enable mouse mode, can be useful for resizing splits for example!
-o.mouse = "a"
+vim.opt.mouse = "a"
 
 -- Don't show the mode, since it's already in status line
-o.showmode = false
+vim.opt.showmode = false
 
 -- Sync clipboard between OS and Neovim.
 --  Remove this oion if you want your OS clipboard to remain independent.
 --  See `:help 'clipboard'`
-o.clipboard = "unnamedplus"
+vim.opt.clipboard = "unnamedplus"
 
 -- Enable break indent
-o.breakindent = true
+vim.opt.breakindent = true
 
 -- Save undo history
-o.undofile = true
+vim.opt.undofile = true
 
 -- Case-insensitive searching UNLESS \C or capital in search
-o.ignorecase = true
-o.smartcase = true
+vim.opt.ignorecase = true
+vim.opt.smartcase = true
 
 -- Keep signcolumn on by default
-o.signcolumn = "yes"
+vim.opt.signcolumn = "yes"
 
 -- Decrease update time
-o.updatetime = 250
+vim.opt.updatetime = 250
 
 -- Decrease mapped sequence wait time
 -- Displays which-key popup sooner
-o.timeoutlen = 300
+vim.opt.timeoutlen = 300
 
 -- Configure how new splits should be opened
-o.splitright = true
-o.splitbelow = true
+vim.opt.splitright = true
+vim.opt.splitbelow = true
 
 -- Sets how neovim will display certain whitespace in the editor.
 --  See `:help 'list'`
 --  and `:help 'listchars'`
-o.list = true
-o.listchars = {
+vim.opt.list = true
+vim.opt.listchars = {
 	tab = "» ",
 	trail = "·",
 	nbsp = "␣",
 }
 
 -- Preview substitutions live, as you type!
-o.inccommand = "split"
+vim.opt.inccommand = "split"
 
 -- Show which line your cursor is on
-o.cursorline = true
+vim.opt.cursorline = true
 
 -- Minimal number of screen lines to keep above and below the cursor.
-o.scrolloff = 4
+vim.opt.scrolloff = 4
 
 -- 80 column border for good coding style
-o.cc = "80"
+vim.opt.cc = "80"
 
 -- set fast scrolling
-o.ttyfast = true
+vim.opt.ttyfast = true
 
 -- bash-like tab completion
-o.wildmode = "longest:list"
+vim.opt.wildmode = "longest:list"
 
 -- autoindent in c style
-o.cindent = true
+vim.opt.cindent = true
 
 -- tabs are 8 spaces long
-o.tabstop = 8
-o.softtabstop = 8
+vim.opt.tabstop = 8
+vim.opt.softtabstop = 8
 -- indents are 8 spaces long
-o.shiftwidth = 8
+vim.opt.shiftwidth = 8
 
 -- replace tabs with equivalent amount of spaces
-o.expandtab = true
+vim.opt.expandtab = true
 
 -- conceallevel
-o.conceallevel = 0
+vim.opt.conceallevel = 0
 
 -- use terminal colors
-o.termguicolors = true
+vim.opt.termguicolors = true
 
-o.wrap = true
+vim.opt.wrap = true
 
 -- folding
-o.foldmethod = "manual"
-o.foldexpr = "nvim_treesitter#foldexpr()"
+vim.opt.foldmethod = "manual"
+vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
