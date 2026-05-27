@@ -73,6 +73,8 @@ require("conform").setup({
 
 		c = { "clang-format" },
 
+		cpp = { "clang-format" },
+
 		-- sql = { "sleek" },
 
 		tex = { "latexindent" },
