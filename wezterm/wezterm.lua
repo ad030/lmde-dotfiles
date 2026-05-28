@@ -21,6 +21,18 @@ local color_schemes = {
 -- set the color scheme
 config.color_scheme = color_schemes[6]
 
+config.keys = {
+	{
+		key = "-",
+		mods = "SUPER",
+		action = wezterm.action.DisableDefaultAssignment,
+	},
+	{
+		key = "=",
+		mods = "SUPER",
+		action = wezterm.action.DisableDefaultAssignment,
+	},
+}
 -- disable tab bar
 config.enable_tab_bar = false
 
