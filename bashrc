@@ -134,10 +134,15 @@ if [ -d "$HOME/.cargo/bin" ] ; then
 fi
 
 # add JetBrains IntelliJ IDEA install to path
-if [ -d "$HOME/.intellij-idea/bin/" ] ; then
-        PATH="$PATH:$HOME/.intellij-idea/bin/"
+if [ -d "$HOME/.intellij-idea/bin" ] ; then
+        PATH="$PATH:$HOME/.intellij-idea/bin"
 fi
 
 # use vim as default editor 
 export EDITOR="/usr/bin/vim"
+
+# add installed nix packages to path
+if [ -d "$HOME/.nix-profile/bin" ] ; then
+        PATH="$HOME/.nix-profile/bin:$PATH"
+fi
 
