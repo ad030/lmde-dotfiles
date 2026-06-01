@@ -70,13 +70,13 @@ exec --no-startup-id nm-applet
 set $refresh_i3status killall -SIGUSR1 i3status
 
 # use brightnessctl to adjust screen brightness
-bindsym F3 exec --no-startup-id "brightnessctl set -4%"
-bindsym F4 exec --no-startup-id "brightnessctl set 4%+"
+bindsym $sup+F3 exec --no-startup-id "brightnessctl set -4%"
+bindsym $sup+F4 exec --no-startup-id "brightnessctl set 4%+"
 
 # Use pactl to adjust volume in PulseAudio.
-bindsym F5 exec --no-startup-id "pactl set-sink-mute $(pactl get-default-sink) toggle"
-bindsym F6 exec --no-startup-id "pactl set-sink-volume $(pactl get-default-sink) -4%"
-bindsym F7 exec --no-startup-id "pactl set-sink-volume $(pactl get-default-sink) +4%"
+bindsym $sup+F5 exec --no-startup-id "pactl set-sink-mute $(pactl get-default-sink) toggle"
+bindsym $sup+F6 exec --no-startup-id "pactl set-sink-volume $(pactl get-default-sink) -4%"
+bindsym $sup+F7 exec --no-startup-id "pactl set-sink-volume $(pactl get-default-sink) +4%"
 
 
 # Use Mouse+$mod to drag floating windows to their wanted position
